@@ -16,10 +16,10 @@ const App = () => {
         <Routes>
           <Route element={<MainLayout  />}>
             <Route path="/" element={<Home />} />
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/landing-page" element={<LandingPage />} />
           </Route>
 
-          <Route path='/auth' element={<AuthLayout />}>
+          <Route path='/shop' element={<AuthLayout />}>
           <Route index element={<AuthLanding />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />

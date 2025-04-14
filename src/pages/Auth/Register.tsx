@@ -71,7 +71,7 @@ const Register: React.FC = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full pt-[2%]">
-        <PageTitle title="Create an account" subtitle="Partner" backLink="/auth" />
+        <PageTitle title="Create an account" subtitle="Partner" backLink="/shop" />
         {formFields.map((formField) => (
           <FormField
             key={formField.name}
@@ -98,7 +98,7 @@ const Register: React.FC = () => {
         <Button type="submit" disabled={!form.formState.isDirty} className="w-full cursor-pointer py-[18px]">
           Log in
         </Button>
-        <p className="italic text-[#636C67]">
+        <p className="italic text-[#636C67] font-satoshi">
         <span className="font-semibold">Partner:</span> Join as a Partner (Distributor) to access exclusive partner shops, purchase product packages, and earn monthly profit shares through our distribution program. Perfect for business-oriented users.
         </p>
       </form>

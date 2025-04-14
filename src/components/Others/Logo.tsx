@@ -9,11 +9,11 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ color }) => {
   return (
-    <div className='w-30 overflow-hidden'>
+    <div className='w-[120px] h-[63.821659088134766px] overflow-hidden'>
         { color === "white" ? (
-            <img src={whiteLogo} alt="Logo" className='w-full h-8 object-cover '  />
+            <img src={whiteLogo} alt="Logo" className='w-full h-full object-cover '  />
         ) : (
-            <img src={blackLogo} alt="Logo" className='w-full h-8 object-cover' />
+            <img src={blackLogo} alt="Logo" className='w-full h-full object-cover' />
         )}
     </div>
   )

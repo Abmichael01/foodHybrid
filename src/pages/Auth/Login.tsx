@@ -53,7 +53,7 @@ const Login: React.FC = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 w-full">
-        <PageTitle title="Sign in" subtitle="Partner" backLink="/auth" />
+        <PageTitle title="Sign in" subtitle="Partner" backLink="/shop" />
         {formFields.map((formField) => (
           <FormField
             key={formField.name}

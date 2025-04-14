@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import image from "@/assets/images/auth.png";
 import patterns from "@/assets/images/patterns.png";
 import Motto from "@/components/Others/Motto";
+import Logo from "@/components/Others/Logo";
 
 const AuthLayout: React.FC = () => {
   return (
@@ -24,9 +25,9 @@ const AuthLayout: React.FC = () => {
       />
       <div className="p-5 w-1/2 shrink-0 h-screen sticky top-0 left-0 lg:block hidden">
         <div className="rounded-xl h-full overflow-hidden relative before:absolute before:inset-0 before:bg-black/20 before:backdrop-blur-[2px] ">
-          {/* <div className="relative z-10 flex justify-center mt-5">
+          <div className="absolute top-0 right-0 left-0 z-[3] flex justify-center mt-5">
             <Logo color="black" />{" "}
-          </div> */}
+          </div>
           <Motto className="absolute bottom-5 left-5 " />
           <img src={image} alt="" className="w-full h-full object-cover" />
         </div>
