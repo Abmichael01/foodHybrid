@@ -139,7 +139,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground relative overflow-hidden overflow-y-auto;
+    @apply bg-background text-foreground relative overflow-hidden;
     font-family: "Poppins"
   }
 
