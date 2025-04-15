@@ -1,8 +1,8 @@
 import React from "react";
-import rice from "@/assets/images/rice.png";
-import riceBack from "@/assets/images/rice-back.png";
-import beans from "@/assets/images/beans.png";
-import beansBack from "@/assets/images/beans-back.png";
+import rice from "@/assets/images/rice.webp";
+import riceBack from "@/assets/images/rice-back.webp";
+import beans from "@/assets/images/beans.webp";
+import beansBack from "@/assets/images/beans-back.webp";
 import { cn } from "@/lib/utils";
 
 interface Props {

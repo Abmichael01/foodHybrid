@@ -1,5 +1,5 @@
 import React from "react";
-import pattern from "@/assets/images/patterns.png";
+import pattern from "@/assets/images/patterns.webp";
 
 const Root: React.FC = () => {
   return (

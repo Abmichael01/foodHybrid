@@ -1,6 +1,6 @@
 import React from 'react'
-import riceBanner from "@/assets/images/riceBanner.jpg"
-import beansBanner from "@/assets/images/beansBanner.jpg"
+import riceBanner from "@/assets/images/riceBanner.webp"
+import beansBanner from "@/assets/images/beansBanner.webp"
 
 const Banners: React.FC = () => {
   return (

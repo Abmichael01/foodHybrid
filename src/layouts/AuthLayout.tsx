@@ -1,9 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import image from "@/assets/images/auth.png";
-import patterns from "@/assets/images/patterns.png";
+import image from "@/assets/images/auth.webp";
+import patterns from "@/assets/images/patterns.webp";
 import Motto from "@/components/Others/Motto";
 import Logo from "@/components/Others/Logo";
+
 
 const AuthLayout: React.FC = () => {
   return (

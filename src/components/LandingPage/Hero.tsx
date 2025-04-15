@@ -1,5 +1,5 @@
 import React from "react";
-import heroBgImage from "@/assets/images/wheatField.png";
+import heroBgImage from "@/assets/images/wheatField.webp";
 import { Button } from "../ui/button";
 import { Globe, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";

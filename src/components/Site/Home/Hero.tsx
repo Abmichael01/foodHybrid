@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "@/assets/images/wheatField.png";
+import heroImg from "@/assets/images/wheatField.webp";
 import Motto from "@/components/Others/Motto";
 import { Button } from "@/components/ui/button";
 import StackedProducts from "@/components/LandingPage/StackedProducts";
