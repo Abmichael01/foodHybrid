@@ -1,6 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import React from "react";
-import partLogo from "@/assets/images/partLogo.png"
+import partLogo from "@/assets/images/partLogo.webp"
 
 const abouts = [
   "We adhere to global best manufacturing practices, ensuring every step of our process meets the highest standards in food safety and hygiene.",
