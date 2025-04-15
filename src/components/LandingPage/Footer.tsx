@@ -3,7 +3,7 @@ import Logo from "../Others/Logo";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="section-padding flex gap-10 flex-col-reverse sm:flex-row items-center justify-between w-full mt-[120px]">
       <Logo className="sm:w-[182.4px] sm:h-[97.02px] lg:w-[315px] lg:h-[167.5px] sm:ml-[82.82px]" />
