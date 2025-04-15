@@ -13,7 +13,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ color, className }) => {
   return (
     <Link to="/" className={cn(
-      'w-[120px] h-[63.821659088134766px] overflow-hidden',
+      'w-[120px] h-[60.821659088134766px] overflow-hidden object-bottom',
       className
     )}>
         { color === "white" ? (

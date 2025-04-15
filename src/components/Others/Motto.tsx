@@ -3,23 +3,24 @@ import React from "react";
 
 interface Props {
   className?: string;
+  sizes?: string[]; 
 }
 
-const Motto: React.FC<Props> = ({ className }) => {
+const Motto: React.FC<Props> = ({ className, sizes }) => {
   return (
     <div
-      className={cn("space-y-4 relative z-0 text-white text-xl", className)}
+      className={cn("space-y-4 relative z-0 text-white text-xl", className, sizes?.at(1) )}
     >
       <h1>
-        <span className="motto-fancy-text">Nourishing</span>{" "}
+        <span className={cn("motto-fancy-text", sizes?.at(0))}>Nourishing</span>{" "}
         <span>Traditions.</span>
       </h1>
       <h1>
-        <span className="motto-fancy-text">Embracing</span>{" "}
+        <span className={cn("motto-fancy-text", sizes?.at(0))}>Embracing</span>{" "}
         <span>Innovation.</span>
       </h1>
       <h1>
-        <span className="motto-fancy-text">Bringing</span>  {" "}
+        <span className={cn("motto-fancy-text", sizes?.at(0))}>Bringing</span>  {" "}
         <span className="font-extrabold patterned-text bg-clip-text text-transparent">AFRICA</span> {" "}
         <span className="font-satoshi">to the</span>{" "}
         <span>World.</span>

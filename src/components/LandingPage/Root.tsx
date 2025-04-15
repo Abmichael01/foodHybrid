@@ -3,7 +3,7 @@ import pattern from "@/assets/images/patterns.png";
 
 const Root: React.FC = () => {
   return (
-    <div className="section-padding pr-0 mt-60 flex items-center justify-between w-full  relative">
+    <div className="section-padding pr-0 mt-60 flex items-center justify-between w-full relative overflow-x-hidden">
       <div className="space-y-5 w-full sm:max-w-[60%]">
         <div>
           <h1 className="w-[70%] sm:w-full text-[20px] sm:text-[24px] lg:text-[40px] text-[#15221B] font-[600]">
