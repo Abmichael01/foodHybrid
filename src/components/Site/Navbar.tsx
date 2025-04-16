@@ -12,7 +12,7 @@ import { ChevronDown } from "lucide-react";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="section-padding flex justify-between items-center mt-10 fixed top-0 right-0 left-0 z-[99] backdrop-blur-md">
+    <div className="section-padding flex justify-between py-10 items-center absolute top-0 right-0 left-0 z-[9999] backdrop-blur-md">
       <Logo color="black" />
       <nav className="flex gap-10 items-center text-[]">
         <Link to="/#">Home</Link>
@@ -27,9 +27,11 @@ const Navbar: React.FC = () => {
           </DropdownMenuContent>
         </DropdownMenu>
         <Link to="/#">Contact</Link>
+        <Link to="/shop/login">
         <Button className="bg-transparent hover:bg-transparent text-[#252525] border border-primary py-[10px] px-7">
           Login
         </Button>
+        </Link>
       </nav>
     </div>
   );

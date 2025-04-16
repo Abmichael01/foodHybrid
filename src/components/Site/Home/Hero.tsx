@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
         <Motto className="" sizes={["text-[64px]", "text-[40px]"]} />
         <Button className="py-[12px] px-[20px]">Get Started</Button>
       </div>
-      <StackedProducts type="rice" className="absolute left-[3%] sm:left-[10%] " />
-      <StackedProducts type="beans" className="absolute right-[3%] sm:right-[10%]  " />
+      <StackedProducts type="rice" className="absolute left-[2%] sm:left-[40px] lg:left-[100px] " />
+      <StackedProducts type="beans" className="absolute right-[2%] sm:right-[40px] lg:right-[100px]  " />
     </div>
   );
 };

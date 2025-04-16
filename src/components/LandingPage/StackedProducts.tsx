@@ -17,8 +17,8 @@ const StackedProducts: React.FC<Props> = ({ type, className }) => {
   return (
     <div className={cn("bottom-[-60px] sm:bottom-[-90px] lg:bottom-[-120px] z-[4]", className)}>
       <div className="relative flex items-center">
-        <img src={imgBack} alt="" className="w-[62px] h-[80px] sm:w-[99.7px] lg:w-[149.6px] sm:h-[114.8px] lg:h-[172.3px] translate-x-[30px] sm:translate-x-[80px]" />
-        <img src={imgFront} alt="" className="w-[93px] h-[112px] sm:w-[147.6px] lg:w-[221.5px] sm:h-[160px] lg:h-[240px] z-[1]" />
+        <img src={imgBack} alt="" className="w-[62px] h-[80px] sm:w-[107.2px] lg:w-[149.6px] sm:h-[123.4px] lg:h-[172.3px] translate-x-[30px] sm:translate-x-[80px]" />
+        <img src={imgFront} alt="" className="w-[93px] h-[112px] sm:w-[158.7px] lg:w-[221.5px] sm:h-[172px] lg:h-[240px] z-[1]" />
         <img src={imgBack} alt="" className="w-[62px] h-[80px] sm:w-[99.7px] lg:w-[149.6px] sm:h-[114.8px] lg:h-[172.3px] translate-x-[-30px] sm:translate-x-[-80px]" />
       </div>
     </div>
