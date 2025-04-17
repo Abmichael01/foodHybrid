@@ -4,7 +4,7 @@ import { BadgeCheckIcon } from "lucide-react";
 
 const OurFacility: React.FC = () => {
   return (
-    <div className="section-padding mt-14 sm:mt-40 sm:px-[48x] lg:px-[120px] py-[40px] flex flex-col-reverse sm:flex-row gap-y-[20px] justify-between items-center sm:bg-[#F9F9F9]">
+    <div className="section-padding mt-14 sm:mt-40 lg:px-[120px] py-[40px] flex flex-col-reverse sm:flex-row gap-y-[20px] justify-between items-center sm:bg-[#F9F9F9]">
       <h1 className="shrink-0 text-[20px] sm:text-[24px] lg:text-[36px] font-semibold flex flex-col sm:block items-center text-center sm:text-start">
         <span>
           Our Facility is HACCP{" "}

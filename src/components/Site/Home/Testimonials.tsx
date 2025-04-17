@@ -85,7 +85,7 @@ const Testimonials: React.FC = () => {
         </div>
         <div>
           <div className={cn(
-            "w-full p-[13.44px] shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container",
+            "w-full p-[13.44px] sm:hidden shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container",
             
           )}>
             <div className="space-y-[7.78px]">
