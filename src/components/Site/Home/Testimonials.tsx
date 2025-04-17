@@ -110,7 +110,7 @@ const Testimonials: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between sm:hidden  items-center">
           <div
             onClick={() => {
               setIndex((prev) => (index === 0 ? 0 : prev - 1));
