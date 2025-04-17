@@ -19,17 +19,17 @@ const standards = [
 
 const OurStandards: React.FC = () => {
   return (
-    <div className="section-padding  space-y-[60px] mt-[60px] ">
-      <div className="flex flex-col items-center gap-[60px] px-[40px]">
+    <div className="section-padding space-y-[60px] mt-[60px] ">
+      <div className="flex flex-col items-center gap-[20px] sm:gap-[40px] lg:gap-[60px]">
         <div className="space-y-[8px] text-center">
-          <h1 className="text-[32px] text-[#15221B] font-semibold">Our Standards</h1>
-          <p className="text-[18px] text-[#929292]">We are Licensed and Certified by:</p>
+          <h1 className="section-title">Our Standards</h1>
+          <p className=" sm:text-[16px] lg:text-[18px] text-[#929292]">We are Licensed and Certified by:</p>
         </div>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex flex-col sm:flex-row gap-y-[40px] justify-between items-center w-full">
             {standards.map((standard, index) => (
                 <div key={index} className="flex flex-col gap-[20px] items-center">
-                    <img src={standard.logo} alt="" />
-                    <h1 className="text-center" dangerouslySetInnerHTML={{ __html: standard.name }} />
+                    <img src={standard.logo} alt="" className="h-[80px] sm:h-[60px] lg:h-auto" />
+                    <h1 className="text-center text-[16px] sm:text-[18px] font-semibold text-wrap" dangerouslySetInnerHTML={{ __html: standard.name }} />
                 </div>
             ))}
         </div>

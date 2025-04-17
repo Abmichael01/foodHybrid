@@ -1,24 +1,30 @@
-import React from 'react'
+import React from "react";
 import haccp from "@/assets/images/haccp.webp";
 import { BadgeCheckIcon } from "lucide-react";
 
 const OurFacility: React.FC = () => {
   return (
-    <div className="section-padding mt-40 px-[120px] py-[40px] flex justify-between items-center bg-[#F9F9F9]">
-        <h1 className="text-[36px] font-semibold">
+    <div className="section-padding mt-14 sm:mt-40 sm:px-[48x] lg:px-[120px] py-[40px] flex flex-col-reverse sm:flex-row gap-y-[20px] justify-between items-center sm:bg-[#F9F9F9]">
+      <h1 className="shrink-0 text-[20px] sm:text-[24px] lg:text-[36px] font-semibold flex flex-col sm:block items-center text-center sm:text-start">
+        <span>
           Our Facility is HACCP{" "}
-          <span className="text-[20px] font-satoshi">
+          <span className="text-[12px] text-[#15221B] sm:text-[16px] lg:text-[20px] font-satoshi">
             (Hazard Analysis & Critical Control Point)
-          </span>{" "}
-          <br />
-          <span className="flex gap-2 items-center">
-            Certified
-            <BadgeCheckIcon className="inline fill-[#008000] text-white size-[28.6px]" />
           </span>
-        </h1>
-        <img src={haccp} alt="HACCP" className="w-[281.25px] h-[200px]" />
-      </div>
-  )
-}
+        </span>
+        <br className="hidden sm:block" />
+        <span className="flex gap-2 items-center">
+          Certified
+          <BadgeCheckIcon className="inline fill-[#008000] text-white size-[28.6px]" />
+        </span>
+      </h1>
+      <img
+        src={haccp}
+        alt="HACCP"
+        className="h-[112px] sm:w-[281.25px] sm:h-[200px] drop-shadow-2xl drop-shadow-[#EFDE7FEB]"
+      />
+    </div>
+  );
+};
 
-export default OurFacility
+export default OurFacility;

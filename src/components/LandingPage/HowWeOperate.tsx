@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import React from "react";
 import partLogo from "@/assets/images/partLogo.webp";
+import { cn } from "@/lib/utils";
 
 const hows = [
   "We adhere to global best manufacturing practices, ensuring every step of our process meets the highest standards in food safety and hygiene.",
@@ -17,7 +18,7 @@ interface Props {
 const HowWeOperate: React.FC<Props> = ({ title }) => {
   return (
     <div className="bg-[#15221B] section-padding py-20 w-full mt-20 text-white space-y-[60px]">
-      {title && ( <h1 className="text-center font-semibold text-[32px]">How We Operate</h1> )}
+      {title && ( <h1 className="text-center text-[18px] sm:text-[24px] font-semibold lg:text-[32px]">How We Operate</h1> )}
       <div className=" flex items-center justify-between ">
         <img
           src={partLogo}
@@ -27,8 +28,10 @@ const HowWeOperate: React.FC<Props> = ({ title }) => {
         <div className="w-full sm:w-1/2 space-y-[40px]">
           {hows.map((how, index) => (
             <div key={index} className="space-y-[12px]">
-              <CheckCircle2 />
-              <p>{how}</p>
+              <CheckCircle2 className={cn(
+                title && "fill-white text-[#15221B]"
+              )} />
+              <p className="leading-[28px] text-[18px]">{how}</p>
             </div>
           ))}
         </div>

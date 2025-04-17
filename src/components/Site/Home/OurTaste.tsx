@@ -6,7 +6,6 @@ import riceFlour from "@/assets/images/riceFlour.webp";
 import plantainFlour from "@/assets/images/plantainFlour.webp";
 import garri from "@/assets/images/garri.webp";
 
-
 const tastes = [
   {
     name: "Rice",
@@ -42,34 +41,51 @@ const tastes = [
     name: "Garri",
     description:
       "Our Garri, made from finely processed cassava roots, strikes the perfect balance of crunch and smoothness. Enjoy it as a refreshing drink or as eba, a quick, nutritious meal that delivers comfort in every bite.",
-    img: garri
+    img: garri,
   },
 ];
 
 const OurTaste: React.FC = () => {
   return (
     <div className="section-padding mt-40">
-      <div className="px-[40px] space-y-[60px]">
+      <div className="lg:px-[40px] space-y-[60px]">
         <div className="space-y-[20px] text-center">
-          <h1 className="text-[32px] font-semibold">Our Recipe, Your Taste</h1>
-          <p className="text-center">
-            At Food Hybrid, every product is crafted with care, blending the
-            richness of African tradition with modern food processing techniques
-            to deliver authentic flavors that satisfy your cravings. Our recipe
-            is simple: Natural ingredients, Expert processing, and a commitment
-            to Quality. The result? A taste that feels like Home.
+          <h1 className="section-title">Our Recipe, Your Taste</h1>
+          <p className="sm:text-center leading-[28px] sm:text-[16px] flex sm:block flex-col gap-y-[24px] text-start">
+            <span>
+              At Food Hybrid, every product is crafted with care, blending the
+              richness of African tradition with modern food processing
+              techniques to deliver authentic flavors that satisfy your
+              cravings.
+            </span>{" "}
+            <span>
+              Our recipe is simple: Natural ingredients, Expert processing, and
+              a commitment to Quality.
+            </span>{" "}
+            <span>The result? A taste that feels like Home.</span>
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-x-20 gap-y-10 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-x-20 lg:gap-y-10 ">
           {tastes.map((taste, index) => (
             <div
               key={index}
               className="flex flex-col space-y-[20px] bg-[#F9F9F9] rounded-[12px] px-[20px] py-[40px]"
             >
               <div className="flex justify-center ">
-                <img src={taste.img} alt={taste.name} className="w-[193.5px] h-[220px]" />
+                <img
+                  src={taste.img}
+                  alt={taste.name}
+                  className=" h-[160px] sm:h-[120px] lg:w-[193.5px] lg:h-[220px]"
+                />
               </div>
-              <p>{taste.description}</p>
+              <div>
+                <h1 className="text-[20px] sm:text-[16px] lg:text-[] font-semibold">
+                  {taste.name}
+                </h1>
+                <p className="text-[18px] leading-[28px] sm:text-[14px] lg:text-[] font-satoshi">
+                  {taste.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

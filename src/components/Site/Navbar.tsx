@@ -8,13 +8,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MenuIcon } from "lucide-react";
 
 const Navbar: React.FC = () => {
   return (
     <div className="section-padding flex justify-between py-10 items-center absolute top-0 right-0 left-0 z-[9999] backdrop-blur-md">
-      <Logo color="black" />
-      <nav className="flex gap-10 items-center text-[]">
+      <Logo color="black" className="w-[83px] h-[44px]" />
+      <nav className="lg:flex hidden gap-10 items-center text-[]">
         <Link to="/#">Home</Link>
         <DropdownMenu>
           <DropdownMenuTrigger className="flex gap-1 items-center outline-none cursor-pointer">
@@ -33,6 +33,9 @@ const Navbar: React.FC = () => {
         </Button>
         </Link>
       </nav>
+      <div className="lg:hidden  cursor-pointer">
+        <MenuIcon className="size-[32px] sm:size-[36px]" />
+      </div>
     </div>
   );
 };
