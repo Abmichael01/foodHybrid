@@ -13,16 +13,19 @@ const navs = [
     name: "Portfolio",
     icon: <IoBagHandleOutline />,
     slug: "portfolio",
+    link: "portfolio",
   },
   {
     name: "Shop",
     icon: <FiShoppingBag />,
     slug: "shop",
+    link: "shop"
   },
   {
     name: "My Orders",
     icon: <RiBox3Line />,
     slug: "my-orders",
+    link: "my-orders?tab=processing"
   },
 ];
 
@@ -41,7 +44,7 @@ const Sidebar: React.FC = () => {
           {navs.map((nav, index) => (
             <Link
               key={index}
-              to={`/partner/${nav.slug}`}
+              to={`/partner/${nav.link}`}
               className={cn(
                 "w-full flex items-center gap-2 px-[48px] py-[10px]",
                 currentPath === nav.slug ? "bg-[#15221B1F]" : ""

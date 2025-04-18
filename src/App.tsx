@@ -15,6 +15,7 @@ import MyOrders from "./pages/PartnerDashboard/MyOrders";
 import OrderDetails from "./pages/PartnerDashboard/Order/OrderDetails";
 import OrderTransactionFlow from "./pages/PartnerDashboard/Order/OrderTransactionFlow";
 import Wallet from "./pages/PartnerDashboard/Wallet";
+import ShopItemDetails from "./pages/PartnerDashboard/ShopItemDetails";
 
 const App = () => {
   return (
@@ -40,12 +41,18 @@ const App = () => {
             <Route path="wallet" element={<Wallet />} />
           </Route>
 
-          <Route path="shop" element={<Shop />} />
+          <Route path="shop">
+            <Route index element={<Shop />} />
+            <Route path=":itemId" element={<ShopItemDetails />} />
+          </Route>
 
           <Route path="my-orders">
             <Route index element={<MyOrders />} />
-            <Route path=":orderId" element={<OrderDetails /> } />
-            <Route path=":orderId/transactions" element={<OrderTransactionFlow /> } />
+            <Route path=":orderId" element={<OrderDetails />} />
+            <Route
+              path=":orderId/transactions"
+              element={<OrderTransactionFlow />}
+            />
           </Route>
         </Route>
       </Routes>
