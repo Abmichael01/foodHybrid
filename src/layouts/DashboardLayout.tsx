@@ -1,15 +1,10 @@
 import Navbar from "@/components/PartnerDashboard/Layouts/Navbar";
 import Sidebar from "@/components/PartnerDashboard/Layouts/Sidebar";
-import { useSidebarStore } from "@/stores/sidebarStore";
-import React, { useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout: React.FC = () => {
-  const { toggle } = useSidebarStore()
-
-  useEffect(() => {
-    toggle()
-  }, [toggle])
+  
 
   return (
       <div className="bg-[#F9F9F9] flex relative text-[#494949] min-h-screen">

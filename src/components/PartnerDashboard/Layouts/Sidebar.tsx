@@ -57,7 +57,7 @@ const Sidebar: React.FC = () => {
         )}
         <div
           className={cn(
-            "w-[205px] left-[-210px] fixed lg:relative h-[100vh] shrink-0 bg-white flex flex-col gap-4 pb-10 justify-between transition-all duration-500 ease-initial",
+            "w-[205px] left-[-210px] fixed lg:relative h-[100vh] shrink-0 bg-white flex flex-col gap-4 pb-10 justify-between transition-all duration-300 ease-initial",
             isOpen && "left-[0] z-[9999]"
           )}
         >
