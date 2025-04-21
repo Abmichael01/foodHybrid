@@ -18,7 +18,7 @@ interface Props {
 
 const Products: React.FC<Props> = ({ products, transactionsPage }) => {
   return (
-    <div className="space-y-[10px]">
+    <div className="space-y-[20px]">
       <div className="flex justify-between items-center">
         <h1 className="text-[18px] font-[600] text-[#494949]">Products</h1>
         { !transactionsPage && <Link
@@ -29,11 +29,11 @@ const Products: React.FC<Props> = ({ products, transactionsPage }) => {
           <FiChevronRight />
         </Link>}
       </div>
-      <div className="flex flex-wrap gap-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[40px]">
         {products.map((product, index) => (
             <div key={index} className={cn(
               "flex gap-[20px] items-center  pr-[20px]",
-              index !== products.length -1 && "border-r"
+              // index !== products.length -1 && "border-r"
             )}>
                 <img src={
                     product.type === "rice" ? rice : beans

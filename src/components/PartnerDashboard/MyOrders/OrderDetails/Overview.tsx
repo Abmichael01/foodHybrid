@@ -1,12 +1,13 @@
 import React from "react";
 import orderBox from "@/assets/svgs/orderBox.svg";
+import { Separator } from "@/components/ui/separator";
 
 const Overview: React.FC = () => {
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex gap-20 items-center pl-[60px]">
-        <img src={orderBox} alt="" className="size-[116.6px]" />
-        <div className="space-y-[12px]">
+    <div className="flex flex-col gap-y-[20px] sm:flex-row justify-between sm:items-center">
+      <div className="flex gap-5 sm:gap-10 md:gap-14 lg:gap-20 items-center lg:pl-[60px] w-full text-end sm:text-start">
+        <img src={orderBox} alt="" className="size-[116.6px] shrink-0" />
+        <div className="space-y-[12px] flex-grow">
           <h1 className="text-[24px] font-[500]">Order #5456</h1>
           <div className="space-y-[2px] font-satoshi">
             <p className="text-[14px] font-[500] text-[#929292]">Order ID</p>
@@ -20,8 +21,9 @@ const Overview: React.FC = () => {
           </div>
         </div>
       </div>
+      <Separator className="sm:hidden" />
       <div className="space-y-[12px] text-end">
-        <h1 className="text-[14px] text-[#1C274C] bg-[#1C274C1A] py-[4px] px-[12px] rounded-[2px]">
+        <h1 className="text-[14px] text-[#1C274C] bg-[#1C274C1A] py-[4px] px-[12px] rounded-[2px] ">
           Pending Settlement
         </h1>
         <div className="space-y-[2px] font-satoshi">

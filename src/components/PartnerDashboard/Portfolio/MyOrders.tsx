@@ -64,7 +64,7 @@ const MyOrders: React.FC<Props> = ({ pending }) => {
           <FaChevronRight />
         </Link>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-[40px] px-[24px]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-[40px] px-[24px]">
         {orders.map((order, index) => (
             <Link to={`/partner/my-orders/${order.id}`} key={index} className="flex flex-col gap-[8px] items-center text-center font-satoshi">
                 <img src={orderBox} alt="" />
