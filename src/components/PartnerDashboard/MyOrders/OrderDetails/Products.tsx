@@ -3,6 +3,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import rice from "@/assets/images/manyrice.webp"
 import beans from "@/assets/images/manybeans.webp"
+import { cn } from "@/lib/utils";
 
 interface Props {
   products: {
@@ -28,9 +29,12 @@ const Products: React.FC<Props> = ({ products, transactionsPage }) => {
           <FiChevronRight />
         </Link>}
       </div>
-      <div className="flex flex-wrap gap-[12px]">
+      <div className="flex flex-wrap gap-[20px]">
         {products.map((product, index) => (
-            <div key={index} className="flex gap-[20px] items-center">
+            <div key={index} className={cn(
+              "flex gap-[20px] items-center  pr-[20px]",
+              index !== products.length -1 && "border-r"
+            )}>
                 <img src={
                     product.type === "rice" ? rice : beans
                 } alt="" className="" />

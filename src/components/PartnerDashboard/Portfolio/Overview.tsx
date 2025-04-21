@@ -9,7 +9,7 @@ import { FaPlus } from "react-icons/fa6";
 
 const Overview: React.FC = () => {
   return (
-    <div className="grid grid-cols-3 gap-x-[72px]">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[72px] gap-y-[50px]">
       <OverviewCard>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-1 text-[12px]">
@@ -36,7 +36,7 @@ const Overview: React.FC = () => {
         </div>
       </OverviewCard>
 
-      <OverviewCard>
+      <OverviewCard className="h-[160px] lg:h-full">
         <div className="flex justify-between items-center text-[12px]">
           <div className="flex items-center gap-1">
             <FaTag className="w-[8px]" />

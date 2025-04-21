@@ -14,7 +14,7 @@ const Tab: React.FC = () => {
         <div key={index} onClick={() => {
             navigate(`/partner/my-orders?tab=${tab.toLowerCase()}`)
         }} className={cn(
-            "px-5 border-b-2 text-[16px] pb-[12px] cursor-pointer font-satoshi font-[500]",
+            "px-5 border-b-2 text-[16px] w-full sm:w-fit pb-[12px] cursor-pointer font-satoshi font-[500]",
             currentTab === tab.toLowerCase() ? "text-[#15221B] border-[#15221B]" : "text-[#929292] border-[#D0D3D1]" 
         )}>
           {tab}

@@ -19,7 +19,7 @@ const ShopItem: React.FC<Props> = ({ item }) => {
 
     
   return (
-    <div className="flex justify-between items-center px-[24px] py-[20px] border-b border-[#F0F0F0]">
+    <div className="flex flex-col gap-y-5 sm:flex-row sm:justify-between sm:items-center px-[24px] py-[20px] border-b border-[#F0F0F0]">
       <Link to="/partner/shop/090192-000wq0-u00qwjaoas" className="flex gap-[24px] items-center">
         <img src={item.img} alt="" />
         <div className="space-y-[8px]">

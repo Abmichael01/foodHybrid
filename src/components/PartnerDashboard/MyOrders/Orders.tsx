@@ -20,7 +20,7 @@ interface Props {
 
 const Orders: React.FC<Props> = ({ orders, tab }) => {
   return (
-    <div className="space-y-[16px] h-full">
+    <div className="space-y-[16px] h-full w-full">
       {orders.map((order, index) => (
         <div
           key={index}
@@ -65,7 +65,7 @@ const Orders: React.FC<Props> = ({ orders, tab }) => {
       ))}
 
       {orders.length === 0 && (
-        <div className="flex flex-col h-full gap-[4px] items-center justify-center">
+        <div className="flex flex-col h-full gap-[4px] items-center justify-center w-full">
           {tab !== "history" ? (
             <img src={orderBox2} alt="" className="size-[80px]" />
           ) : (
@@ -77,8 +77,8 @@ const Orders: React.FC<Props> = ({ orders, tab }) => {
             {tab === "history" && "You have no order history"}
           </h1>
           {tab !== "history" && (
-            <Link to="/partner/shop">
-              <Button className="mt-14 bg-[#15221B] hover:bg-[#15221B]/90 w-[560px]">
+            <Link to="/partner/shop" className="w-full">
+              <Button className=" mt-7 sm:mt-10 lg:mt-14 bg-[#15221B] hover:bg-[#15221B]/90 w-full lg:w-[560px]">
                 Make an order
               </Button>
             </Link>

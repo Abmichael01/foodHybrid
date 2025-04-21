@@ -34,7 +34,7 @@ const MyOrders: React.FC = () => {
   })
 
   return (
-    <div className='space-y-10 h-full'>
+    <div className='space-y-10 h-full w-full'>
       <Tab />
       <Orders orders={filteredOrders} tab={currentTab as string} />
     </div>
