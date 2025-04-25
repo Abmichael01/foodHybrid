@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     <div className="flex items-center gap-[10px] sm:gap-[24px] h-fit">
       <div
         onClick={toggle}
-        className="px-[12px] shrink-0 py-[12px] text-[14px] bg-white rounded-[8px] h-full border flex items-center gap-[4px] border-[#F0F0F0]"
+        className="px-[12px] lg:hidden shrink-0 py-[12px] text-[14px] bg-white rounded-[8px] h-full border flex items-center gap-[4px] border-[#F0F0F0]"
       >
         <FiMenu className="w-[20.5px] h-[18.7px]" />
       </div>
