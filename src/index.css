@@ -19,6 +19,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Zilap Afro';
+  src: url('./assets/fonts/ZilapAfroDemo-1wD4.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Important for performance */
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -61,6 +69,7 @@
 
   --font-satoshi: "Satoshi", sans-serif;
   --font-distant-stroke: "Distant Stroke", sans-serif;
+  --font-afro: "Zilap Afro", sans-serif;
 }
 
 :root {

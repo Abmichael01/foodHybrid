@@ -11,9 +11,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import PageTitle from "@/components/Auth/PageTitle";
-import { LockKeyhole, User } from "lucide-react";
+import { Loader2Icon, LockKeyhole, User } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   usernameEmail: z.string(),
@@ -43,17 +43,24 @@ const Login: React.FC = () => {
       password: "",
     },
   });
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = React.useState(false);
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/partner/portfolio")
+    }, 2000);
     console.log(values);
   }
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 w-full">
-        <PageTitle title="Sign in" subtitle="Partner" backLink="/shop" />
+        <PageTitle title="Sign in" subtitle="Partner" backLink="/partner" />
         {formFields.map((formField) => (
           <FormField
             key={formField.name}
@@ -103,6 +110,7 @@ const Login: React.FC = () => {
           disabled={!form.formState.isDirty}
           className="w-full cursor-pointer py-[18px]"
         >
+          {isLoading && <Loader2Icon className="animate-spin" /> }
           Log in
         </Button>
       </form>

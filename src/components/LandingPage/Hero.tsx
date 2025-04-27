@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
                 </div>
               </Button>
             </Link>
-            <Link to="/shop">
+            <Link to="/partner">
               <Button className="sm:px-14 px-5 bg-[#15221B] hover:bg-[#15221B]/90">
                 <div className="flex gap-2 items-center">
                   Go to shop

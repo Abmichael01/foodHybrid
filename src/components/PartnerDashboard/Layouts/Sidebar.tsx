@@ -8,6 +8,8 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { FaCircleUser } from "react-icons/fa6";
 import { useSidebarStore } from "@/stores/sidebarStore";
+import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
 
 const navs = [
   {
@@ -82,16 +84,24 @@ const Sidebar: React.FC = () => {
               ))}
             </div>
           </div>
-          <Link
-            to="/partner/profile"
-            className={cn(
-              "flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px]",
-              currentPath === "profile" ? "bg-[#15221B1F]" : ""
-            )}
-          >
-            <FaCircleUser className="size-[20px] text-[#494949]" />
-            Username
-          </Link>
+          <div className="space-y-[12px]">
+            <Link
+              to="/partner/profile"
+              className={cn(
+                "flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px]",
+                currentPath === "profile" ? "bg-[#15221B1F]" : ""
+              )}
+            >
+              <FaCircleUser className="size-[20px] text-[#494949]" />
+              Username
+            </Link>
+            <Link to="/partner/login">
+              <Button className="flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px] bg-transparent hover:bg-[#f9f9f9] rounded-none shadow-none text-[#494949]">
+                <LogOut />
+                Logout
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

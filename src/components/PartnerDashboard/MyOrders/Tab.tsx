@@ -9,7 +9,7 @@ const Tab: React.FC = () => {
   const currentTab = params.get("tab");
   const navigate = useNavigate();
   return (
-    <div className="flex">
+    <div className="flex text-center">
       {tabs.map((tab, index) => (
         <div key={index} onClick={() => {
             navigate(`/partner/my-orders?tab=${tab.toLowerCase()}`)

@@ -8,7 +8,7 @@ import Logo from "@/components/Others/Logo";
 
 const AuthLayout: React.FC = () => {
   return (
-    <div className="flex overflow-hidden">
+    <div className="flex overflow-hidden max-w-screen relative">
       <img
         src={patterns}
         alt=""

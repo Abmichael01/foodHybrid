@@ -23,6 +23,7 @@ import ChangePin from "./pages/PartnerDashboard/Profile/WithdrawalPin/ChangePin"
 import Beneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/Beneficiary";
 import NewBeneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/NewBeneficiary";
 import ResetPassword from "./pages/PartnerDashboard/Profile/ResetPassword";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -30,11 +31,12 @@ const App = () => {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Route>
 
         <Route path="/landing-page" element={<LandingPage />} />
 
-        <Route path="/shop" element={<AuthLayout />}>
+        <Route path="/partner" element={<AuthLayout />}>
           <Route index element={<AuthLanding />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

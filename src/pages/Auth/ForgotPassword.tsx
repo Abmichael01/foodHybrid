@@ -33,7 +33,7 @@ const ForgotPassword: React.FC = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 w-full">
-        <PageTitle title="Forgot Password" backLink="/shop/login" />
+        <PageTitle title="Forgot Password" backLink="/partner/login" />
         <FormField
           control={form.control}
           name="email"

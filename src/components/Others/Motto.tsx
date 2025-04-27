@@ -21,7 +21,7 @@ const Motto: React.FC<Props> = ({ className, sizes }) => {
       </h1>
       <h1>
         <span className={cn("motto-fancy-text", sizes?.at(0))}>Bringing</span>  {" "}
-        <span className="font-extrabold patterned-text bg-clip-text text-transparent">AFRICA</span> {" "}
+        <span className="font-bold font-afro">AFRICA</span> {" "}
         <span className="font-satoshi">to the</span>{" "}
         <span>World.</span>
       </h1>
