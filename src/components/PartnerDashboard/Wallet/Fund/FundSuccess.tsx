@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { useDialogStore } from "@/stores/dialogStore";
+import { useCloseDialog } from "@/hooks/closeDialog";
 import { BadgeCheck } from "lucide-react";
 import React from "react";
 import { PiCoinsBold } from "react-icons/pi";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const FundSuccess: React.FC = () => {
-    const { closeDialog } = useDialogStore()
-    const navigate = useNavigate()
-    const location = useLocation()
+  const close = useCloseDialog("fundWallet");
   return (
     <div className="space-y-[]">
       <div className="flex flex-col gap-[24px] items-center text-center">
@@ -17,10 +14,7 @@ const FundSuccess: React.FC = () => {
         <p className="text-[20px] font-[500]">£10,000 has successfully been added to your wallet</p>
         <PiCoinsBold className="text-yellow-500 fill-yellow-400 mt-[4px]" />
       </div>
-      <Button onClick={() => {
-        closeDialog("fundWallet")
-        navigate(location.pathname)
-      }} className="w-full mt-[40px]">
+      <Button onClick={close} className="w-full mt-[40px]">
         Done
       </Button>
     </div>

@@ -7,9 +7,7 @@ import {
 import { GlobalDialog } from "@/components/ui/CustomDialog";
 import { FaMoneyBill } from "react-icons/fa";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import Beneficiary from "./Beneficiary";
 import WithdrawalAmount from "./WithdrawalAmount";
-import NewBeneficiary from "./NewBeneficiary";
 import { ArrowLeft } from "lucide-react";
 import EnterPin from "./EnterPin";
 import ProcessingWithdrawal from "./ProcessingWithdrawal";
@@ -19,7 +17,7 @@ const WithdrawalDialog: React.FC = () => {
   const dialogCurrent = params.get("dialogCurrent");
   const navigate = useNavigate();
   return (
-    <GlobalDialog dialogName="withdrawFromWallet">
+    <GlobalDialog dialogName="withdrawFromPortfolio">
       <DialogContent>
         { dialogCurrent !== "processing" && <DialogHeader className="space-y-[8px] text-[#494949]">
           {dialogCurrent && (
@@ -32,9 +30,7 @@ const WithdrawalDialog: React.FC = () => {
             <FaMoneyBill className="fill-[#157811]" />
           </DialogTitle>
         </DialogHeader>}
-        {dialogCurrent === "beneficiary" || !dialogCurrent && <Beneficiary /> }
-        {dialogCurrent === "amount" && <WithdrawalAmount /> }
-        {dialogCurrent === "newBeneficiary" && <NewBeneficiary /> }
+        {dialogCurrent === "amount" || !dialogCurrent && <WithdrawalAmount /> }
         {dialogCurrent === "enterPin" && <EnterPin /> }
         {dialogCurrent === "processing" && <ProcessingWithdrawal /> }
       </DialogContent>

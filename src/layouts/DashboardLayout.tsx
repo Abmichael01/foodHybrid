@@ -1,7 +1,9 @@
 import Navbar from "@/components/PartnerDashboard/Layouts/Navbar";
 import Sidebar from "@/components/PartnerDashboard/Layouts/Sidebar";
 import FundWalletDialog from "@/components/PartnerDashboard/Wallet/Fund/FundWalletDialog";
-import WithdrawalDialog from "@/components/PartnerDashboard/Wallet/Withdraw/WithdrawalDialog";
+import { default as WithdrawFromWallet } from "@/components/PartnerDashboard/Wallet/Withdraw/WithdrawalDialog";
+import { default as WithdrawFromPortfolio } from "@/components/PartnerDashboard/Portfolio/Withdraw/WithdrawalDialog";
+
 import { useDialogStore } from "@/stores/dialogStore";
 import React, { useEffect } from "react";
 import { Outlet, useSearchParams } from "react-router-dom";
@@ -26,7 +28,8 @@ const DashboardLayout: React.FC = () => {
             <Outlet />
           </div>
           <FundWalletDialog />
-          <WithdrawalDialog />
+          <WithdrawFromWallet />
+          <WithdrawFromPortfolio />
         </div>
       </div>
   );

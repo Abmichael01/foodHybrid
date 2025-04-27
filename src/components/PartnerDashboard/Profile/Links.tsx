@@ -16,17 +16,17 @@ const links = [
   {
     name: "Beneficiary",
     icon: <FaRegCircleUser className="size-[20px]" />,
-    link: "#",
+    link: "/partner/profile/beneficiary",
   },
   {
     name: "Withdrawal Pin",
     icon: <img src={passcodeLock} alt="" />,
-    link: "#",
+    link: "/partner/profile/withdrawal-pin",
   },
   {
     name: "Reset Password",
     icon: <CiLock className="size-[20px] stroke-1" />,
-    link: "#",
+    link: "/partner/profile/reset-password?current=enterPassword",
   },
   {
     name: "Help and Support",
@@ -40,7 +40,7 @@ const Links: React.FC = () => {
     <div className="space-y-[12px]">
       {links.map((link, index) => (
         <Link
-        to="#"
+        to={link.link}
           key={index}
           className="text-[#494949] flex items-center justify-between px-[12px] py-[12px] bg-[#f3f3f3] rounded-[8px] "
         >

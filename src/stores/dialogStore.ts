@@ -17,9 +17,12 @@ export const useDialogStore = create<DialogState>((set) => ({
       dialogs: { ...state.dialogs, [dialogName]: true },
     })),
   closeDialog: (dialogName) =>
-    set((state) => ({
-      dialogs: { ...state.dialogs, [dialogName]: false },
-    })),
+    {
+      set((state) => ({
+        dialogs: { ...state.dialogs, [dialogName]: false },
+      }))
+
+    },
   toggleDialog: (dialogName) =>
     set((state) => ({
       dialogs: { ...state.dialogs, [dialogName]: !state.dialogs[dialogName] },

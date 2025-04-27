@@ -174,7 +174,7 @@ html{
 }
 
 .button {
-  @apply px-5 py-3 text-white rounded-sm flex gap-2 items-center cursor-pointer
+  @apply px-5 py-[16px]  rounded-sm flex gap-2 items-center cursor-pointer
 }
 
 .testimonials-container::-webkit-scrollbar {
@@ -191,4 +191,8 @@ html{
 
 .fade-in{
   @apply opacity-[1];
+}
+
+.dialog-input {
+  @apply px-[16px] py-[10px] bg-[#F0F0F0] rounded-[12px] w-full text-[18px]
 }

@@ -15,7 +15,7 @@ const FundByCard: React.FC = () => {
           <input
             id="card-number"
             type="text"
-            className="px-[16px] py-[10px] bg-[#F0F0F0] rounded-[12px] w-full text-[18px]"
+            className="dialog-input"
             placeholder="xxxx xxxx xxxx"
           />
         </div>
@@ -28,7 +28,7 @@ const FundByCard: React.FC = () => {
               id="expiry-date"
               type="text"
               placeholder="mm/yy"
-              className="px-[16px] py-[10px] bg-[#F0F0F0] rounded-[12px] w-full text-[18px]"
+              className="dialog-input"
             />
           </div>
           <div className="flex flex-col flex-1 gap-y-2">
@@ -39,7 +39,7 @@ const FundByCard: React.FC = () => {
               id="cvv"
               type="text"
               placeholder="***"
-              className="px-[16px] py-[10px] bg-[#F0F0F0] rounded-[12px] w-full text-[18px]"
+              className="dialog-input"
             />
           </div>
         </div>

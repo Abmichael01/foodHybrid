@@ -17,6 +17,12 @@ import OrderTransactionFlow from "./pages/PartnerDashboard/Order/OrderTransactio
 import Wallet from "./pages/PartnerDashboard/Wallet";
 import ShopItemDetails from "./pages/PartnerDashboard/ShopItemDetails";
 import Profile from "./pages/PartnerDashboard/Profile/Profile";
+import WithdrawalPin from "./pages/PartnerDashboard/Profile/WithdrawalPin/WithdrawalPin";
+import CheckPin from "./pages/PartnerDashboard/Profile/WithdrawalPin/CheckPin";
+import ChangePin from "./pages/PartnerDashboard/Profile/WithdrawalPin/ChangePin";
+import Beneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/Beneficiary";
+import NewBeneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/NewBeneficiary";
+import ResetPassword from "./pages/PartnerDashboard/Profile/ResetPassword";
 
 const App = () => {
   return (
@@ -56,10 +62,19 @@ const App = () => {
             />
           </Route>
 
-          <Route path="profile" >
-              <Route index element={<Profile />} />
+          <Route path="profile">
+            <Route index element={<Profile />} />
+            <Route path="withdrawal-pin">
+              <Route index element={<WithdrawalPin />} />
+              <Route path="check-pin" element={<CheckPin />} />
+              <Route path="change-pin" element={<ChangePin />} />
+            </Route>
+            <Route path="beneficiary">
+              <Route index element={<Beneficiary />} />
+              <Route path="new" element={<NewBeneficiary />} />
+            </Route>
+            <Route path="reset-password" element={<ResetPassword />} />
           </Route>
-
         </Route>
       </Routes>
     </BrowserRouter>

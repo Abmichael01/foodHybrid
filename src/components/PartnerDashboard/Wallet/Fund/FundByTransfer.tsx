@@ -35,7 +35,7 @@ const FundByTransfer: React.FC = () => {
           mins
         </h1>
       </div>
-      <Link to="http://localhost:5173/partner/portfolio/wallet?dialog=fundWallet&dialogCurrent=amount">
+      <Link to="/partner/portfolio/wallet?dialog=fundWallet&dialogCurrent=amount">
         <Button className="w-full mt-[28px]">I’ve made the transfer</Button>
       </Link>
     </div>

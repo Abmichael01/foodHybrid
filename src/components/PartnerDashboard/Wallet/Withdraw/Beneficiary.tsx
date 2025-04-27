@@ -5,6 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Beneficiary: React.FC = () => {
+  
   return (
     <div>
       <h1 className="text-[12px]">Beneficiary</h1>
@@ -17,12 +18,12 @@ const Beneficiary: React.FC = () => {
             </div>
         </Link>
       </div>
-      <div className="flex justify-center i">
+      <Link to="/partner/portfolio/wallet?dialog=walletWithdrawal&dialogCurrent=newBeneficiary" className="flex justify-center w-full">
         <Button variant={"outline"} className="mt-[40px] rounded-full p-[8px] bg-[#F0F0F0]">
           <Plus />
           Add a new beneficiary
         </Button>
-      </div>
+      </Link>
     </div>
   );
 };
