@@ -19,9 +19,9 @@ const WithdrawalPin: React.FC = () => {
     <div className="space-y-10">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-[8px]">
-          <Link to="/partner/portfolio">
+          <Link to="/partner/profile">
             <GoArrowLeft className="size-[24px]" />
-          </Link>
+        </Link>
           <h1 className="text-[24px]">Withdrawal PIN</h1>
         </div>
       </div>

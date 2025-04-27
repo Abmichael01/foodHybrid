@@ -56,13 +56,13 @@ const item = {
 
 const ShopItemDetails: React.FC = () => {
   return (
-    <div className="space-y-[20px]">
+    <div className="space-y-[30px]">
       <Link to="/partner/shop">
         <GoArrowLeft className="size-[20px]" />
       </Link>
       <div className="space-y-[60px]">
         <div className="space-y-[40px]">
-          <div className="flex gap-[40px] pl-[40px]">
+          <div className="flex flex-col md:flex-row gap-[40px] md:pl-[40px]">
             <img src={item.img} alt="" className="w-[240px] object-contain" />
             <div className="space-y-[20px] text-start">
               <div className="space-y-[2px]">
@@ -91,12 +91,12 @@ const ShopItemDetails: React.FC = () => {
                 <span className="text-[#16A34A]">12% Returns</span>
                 <span className="text-[#494949]"> on overall purchase</span>
             </h1>
-            <p className="text-[18px] font-satoshi rounded-[12px] bg-[#F9F9F9] w-[770px] py-[16px] px-[12px]">{item.description}</p>
+            <p className="text-[18px] text-wrap font-satoshi rounded-[12px] bg-[#F9F9F9] lg:w-[770px] py-[16px] px-[12px]">{item.description}</p>
           </div>
         </div>
         <div className="space-y-[20px]">
             <h1 className="text-center font-[600] text-[20px]">Check out other products</h1>
-            <div className="flex justify-between">
+            <div className="flex flex-wrap gap-[20px] justify-between">
                 {otherProdcts.map((product, index) => (
                     <div className="text-center space-y-[24px]" key={index}>
                         <img src={product.img} alt="" />

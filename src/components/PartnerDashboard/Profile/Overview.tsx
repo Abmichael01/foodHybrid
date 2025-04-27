@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const Overview: React.FC = () => {
   return (
-    <div className=" flex justify-center gap-[120px]">
-        <OverviewCard className="w-[313px]">
+    <div className=" flex flex-col sm:flex-row justify-center gap-y-[50px] gap-x-[50px] lg:gap-x-[120px]">
+        <OverviewCard className="w-full sm:w-[313px]">
           <div className="flex justify-between items-center text-[12px]">
             <div className="flex items-center gap-1">
               <IoMdWallet className="w-[8px]" />
@@ -36,7 +36,7 @@ const Overview: React.FC = () => {
             </div>
           </div>
         </OverviewCard>
-        <OverviewCard className="w-[313px]">
+        <OverviewCard className="w-full sm:w-[313px]">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1 text-[12px]">
               <FaBagShopping className="w-[8px]" />

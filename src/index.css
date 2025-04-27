@@ -142,7 +142,8 @@ html{
   }
   body {
     @apply bg-background text-foreground relative;
-    font-family: "Poppins"
+    font-family: "Poppins";
+    height: 100vh;
   }
 
   .logo-crop{

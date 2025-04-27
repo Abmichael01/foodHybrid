@@ -22,9 +22,9 @@ const DashboardLayout: React.FC = () => {
         <div className="sticky top-0 bottom-0 h-full inline">
           <Sidebar />
         </div>
-        <div className="flex-grow h-full w-full md:px-14 sm:px-10 px-2 lg:px-10 py-5 sm:py-10 space-y-5 sm:space-y-10 flex flex-col ">
+        <div className="flex-1 min-h-[90vh] w-full md:px-14 sm:px-10 px-2 lg:px-10 py-5 sm:py-10 space-y-5 sm:space-y-10 flex flex-col ">
           <Navbar />
-          <div className="bg-white rounded-[6px] border border-[#F0F0F0] md:px-14 sm:px-10 px-5 lg:px-10 py-5 sm:py-10 flex-grow">
+          <div className="bg-white rounded-[6px] border border-[#F0F0F0] md:px-14 sm:px-10 px-5 lg:px-10 py-5 sm:py-10 flex-grow h-full">
             <Outlet />
           </div>
           <FundWalletDialog />
