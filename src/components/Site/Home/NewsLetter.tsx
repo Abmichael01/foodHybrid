@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 const NewsLetter: React.FC = () => {
   return (
-    <div className='section-padding mt-40 flex flex-col items-center'>
+    <div className='section-padding mt-[80px] sm:mt-40 flex flex-col items-center'>
         <img src={megaphone} alt="" className='size-[204px]' />
         <div className='text-center flex flex-col items-center'>
             <h1 className='sm:text-[24px] lg:text-[32px] font-semibold'>Stay up to date</h1>

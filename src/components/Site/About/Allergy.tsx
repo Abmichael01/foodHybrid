@@ -3,8 +3,8 @@ import allergyImage from "@/assets/images/allergy.webp";
 
 const Allergy: React.FC = () => {
   return (
-    <div className="section-padding flex mt-[120px] lg:mt-[200px]">
-      <div className="bg-[#F9F9F9] flex items-center rounded-[24px] gap-[47px] py-[28px] px-[47px]">
+    <div className="section-padding flex mt-[100px] sm:mt-[150px] lg:mt-[200px]">
+      <div className="sm:bg-[#F9F9F9] flex flex-col sm:flex-row items-center rounded-[24px] gap-[20px] sm:gap-[47px] py-[28px] sm:px-[47px]">
         <div className="space-y-[12px] lg:space-y-[20px] flex-1">
           <h2 className="text-[28px] lg:text-[40px] font-[600] text-[#15221B]">Allergy Awareness</h2>
           <p className="text-[18px] lg:text-[24px] font-[500] font-satoshi text-start">
@@ -14,7 +14,7 @@ const Allergy: React.FC = () => {
             health.
           </p>
         </div>
-        <img src={allergyImage} alt="" className="w-[45%] h-[251.28px] lg:h-auto shrink-1 rounded-[12px]" />
+        <img src={allergyImage} alt="" className="w-full sm:w-[45%] h-[283px] sm:h-[251.28px] lg:h-auto shrink-1 rounded-[12px] object-cover object-top" />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Mail, MapPin, PhoneIcon } from "lucide-react";
 import Logo from "../Others/Logo";
 import Motto from "../Others/Motto";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { Separator } from "../ui/separator";
 
 const links = [
   { name: "Home", link: "/" },
@@ -13,18 +14,31 @@ const links = [
   { name: "Contact", link: "/contact" },
 ];
 
+const CustomSeparator: React.FC = () => {
+  return (
+    <div className="w-[80%]">
+      <Separator className="lg:hidden sm:block hidden bg-[#3C474166] " />
+    </div>
+  );
+};
+
 const Footer: React.FC = () => {
   return (
-    <footer className="section-padding bg-[#15221B] text-white ">
-      <div className="flex gap-[20px] justify-between py-20 w-full mt-[120px] ">
+    <footer className="section-padding bg-[#15221B] text-white overflow-hidden">
+      <div className="flex flex-col lg:flex-row items-start sm:items-center lg:items-start gap-[40px] lg:gap-[10px] justify-between py-20 w-full">
         {/* Logo and Motto */}
-        <div className="space-y-[40px]">
+        <div className="space-y-[40px] flex flex-col items-start sm:items-center lg:items-start">
           <Logo color="white" className="w-[112px] h-[55.53px] object-cover" />
-          <Motto className="mt-[40px]" sizes={["text-[32px]", "text-[18px]"]} />
+          <Motto
+            className="flex flex-col items-start sm:items-center lg:items-start  text-nowrap"
+            sizes={["text-[32px]", "text-[18px]"]}
+          />
         </div>
 
+        <CustomSeparator />
+
         {/* Navigation Links */}
-        <nav className="space-y-[12px] flex flex-col">
+        <nav className="space-y-[12px] flex flex-col items-start sm:items-center lg:items-start">
           {links.map((link, index) => (
             <Link to={link.link} key={index} className="hover:underline">
               {link.name}
@@ -32,9 +46,11 @@ const Footer: React.FC = () => {
           ))}
         </nav>
 
+        <CustomSeparator />
+
         {/* Contact Information */}
         <div className="space-y-[40px]">
-          <div className="space-y-[20px]">
+          <div className="space-y-[20px] flex flex-col items-start sm:items-center lg:items-start">
             <div className="flex items-center gap-2">
               <PhoneIcon />
               <h2 className="text-[18px] text-nowrap">
@@ -49,7 +65,7 @@ const Footer: React.FC = () => {
 
             <div className="flex items-start gap-2">
               <MapPin />
-              <h2 className="flex flex-col gap-2">
+              <h2 className="flex flex-col items-start sm:items-center lg:items-start gap-2 text-start sm:text-center lg:text-start">
                 <span>
                   Hybrid Foods & Mart Limited <br /> Plots 2-6, Owode Street,
                   Lagere <br /> Ile-Ife, Nigeria
@@ -61,24 +77,31 @@ const Footer: React.FC = () => {
               </h2>
             </div>
           </div>
-          <div className="flex gap-[10px] pl-[32px]">
+          <div className="lg:flex hidden lg:block gap-[10px] pl-[32px]">
             <FaFacebook />
             <FaInstagram />
             <FaXTwitter />
           </div>
         </div>
 
+        <CustomSeparator />
+
         {/* Call to Action */}
-        <div className="space-y-[24px]">
-          <h2 className="font-semibold">Get started with Food Hybrid today!</h2>
-          <button className="bg-white text-[#15221B] rounded-[4px] w-full py-[10px] hover:bg-gray-100 transition">
+        <div className="space-y-[24px] flex flex-col items-center lg:items-start">
+          <h2 className="font-semibold text-[24px] lg:text-auto text-center">Get started with Food Hybrid today!</h2>
+          <button className="bg-white text-[#15221B] rounded-[4px] w-[70%] sm:w-full py-[10px] hover:bg-gray-100 transition">
             Sign up
           </button>
+          <div className="flex block lg:hidden justify-center lg:justify-start gap-[40px] lg:gap-[10px] pl-[32px]">
+            <FaFacebook className="size-[40px]" />
+            <FaInstagram className="size-[40px]" />
+            <FaXTwitter className="size-[40px]" />
+          </div>
         </div>
       </div>
-      <div className="flex items-center justify-center flex-col">
+      <div className="flex items-center justify-center flex-col text-center pb-20 relative ">
         <h2 className="">Copyright © 2024 Food Hybrid. All Rights Reserved</h2>
-        <h2 className="text-[177.65px] bg-gradient-to-b from-[#FFFFFF]/20 to-[#15221B]/20 font-[700] bg-clip-text text-transparent mt-[-40px]">
+        <h2 className="absolute -bottom-[clamp(30px,5vw,100px)] left-0 right-0 text-[clamp(63.82px,10vw,177.65px)] text-[127.63px] text-nowrap lg:text-[177.65px] bg-gradient-to-b from-[#FFFFFF]/20 to-[#15221B]/20 font-[700] bg-clip-text text-transparent ">
           Food Hybrid
         </h2>
       </div>

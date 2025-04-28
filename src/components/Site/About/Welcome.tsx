@@ -53,26 +53,26 @@ const stats = [
 
 const Welcome: React.FC = () => {
   return (
-    <div className="section-padding relative space-y-10 overflow-hidden">
+    <div className="section-padding relative mt-[100px] sm:mt-0 space-y-10 overflow-hidden">
       <WelcomeText />
       <div>
-        <p className="bg-[#F9F9F9] rounded-lg p-5 text-start sm:p-0 sm:bg-background text-[16px] lg:text-[24px] sm:text-[18px] sm:text-center font-satoshi flex flex-col sm:block">
+        <p className=" rounded-lg sm:p-0 sm:bg-background text-[16px] lg:text-[24px] sm:text-[18px] text-center font-satoshi flex flex-col sm:block">
           <span>
             We are more than just a food processing and packaging company.{" "}
           </span>
         </p>
       </div>
-      <div className="mt-[60px] rounded-[24px] overflow-hidden relative sm:h-[385.85px] lg:h-[648px]">
+      <div className="mt-[60px] rounded-[24px] overflow-hidden relative h-[449px] sm:h-[385.85px] lg:h-[648px]">
         <img src={family} alt="" className="w-full h-full object-cover" />
-        <h2 className="text-[20px] font-[600] text-white absolute sm:left-[38px] sm:top-[30px] lg:left-[78px] lg:top-[60px] w-[600px] ">
+        <h2 className=" text-[16px] sm:text-[20px] font-[600] text-white absolute left-[10px] sm:left-[38px] top-[30px] lg:left-[78px] lg:top-[60px] w-[80%] ">
           We are a bridge connecting the rich agricultural heritage of Africa
           with the world.
         </h2>
-        <h2 className="text-[20px] font-[600] text-white absolute right-[38px] bottom-[30px] lg:right-[78px] lg:bottom-[60px] w-[600px] text-end z-[1]">
+        <h2 className="text-[14px] lg:text-[20px] font-[600] text-white absolute right-[10px] sm:right-[38px] bottom-[30px] lg:right-[78px] lg:bottom-[60px] w-[80%] text-end z-[1]">
           We specialize in producing and packaging premium, authentic African
           food products that speak to the heart and taste buds of our customers.
         </h2>
-        <div className="bg-black blur-xl w-[70%] h-[200px] lg:h-[300px] absolute right-[-50px] bottom-[-50px] opacity-[0.7]"></div>
+        <div className="bg-black blur-2xl w-full h-[50%] absolute right-[-50px] bottom-[-50px] opacity-[0.7] rounded-full"></div>
       </div>
       <div className="space-y-5 mt-[80px] lg:mt-[150px]">
         <h1 className="text-center sm:text-[16px] lg:text-[20px] text-[#929292]">

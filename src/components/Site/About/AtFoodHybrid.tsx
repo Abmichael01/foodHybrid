@@ -4,8 +4,8 @@ const AtFoodHybrid: React.FC = () => {
   const gradient =
     "bg-gradient-to-b from-[#15221B] via-[#54886CCC] via-[80%] to-[#15221B] bg-clip-text text-transparent";
   return (
-    <div className="section-padding mt-[200px] text-center">
-      <h2 className="font-[700] text-[40px]">
+    <div className="section-padding mt-[100px] sm:mt-[150px] lg:mt-[200px] text-center">
+      <h2 className="font-[700] text-[20px] sm:text-[32px] lg:text-[40px]">
         <span className={gradient}>
           At <span className="text-[#15221BCC]">Food Hybrid</span>, Food is more
           than sustenance. It’s a{" "}

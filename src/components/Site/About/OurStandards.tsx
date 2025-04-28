@@ -25,11 +25,11 @@ const standards = [
 
 const OurStandards: React.FC = () => {
   return (
-    <div className="section-padding space-y-[60px] mt-[60px] ">
+    <div className="section-padding space-y-[60px] mt-[80px] ">
       <div className="flex flex-col items-center gap-[20px] sm:gap-[40px] lg:gap-[60px]">
-        <div className="space-y-[40px] text-center">
+        <div className=" space-y-[10px] sm:space-y-[40px] ">
           <h1 className="section-title">Our Standards</h1>
-          <p className="lg:px-20 sm:px-10 font-satoshi text-[20px] lg:text-[22px]">
+          <p className="lg:px-20 sm:px-10 text-[16px] text-start sm:text-center font-satoshi sm:text-[20px] lg:text-[22px]">
             We are committed to quality and excellence, adhering to global best
             practices in food safety and hygiene. Our FDA, NAFDAC, and
             international certifications ensure rigorous quality control and
