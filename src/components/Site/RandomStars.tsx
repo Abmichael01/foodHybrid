@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Stars } from "lucide-react";
 import React from "react";
 
@@ -15,12 +16,14 @@ const RandomStars: React.FC<RandomStarsProps> = ({ className = "" }) => {
   ];
 
   return (
-    <div className={`absolute inset-0 w-full h-full ${className}`}>
+    <div className={cn(
+      `absolute inset-0 w-full h-full text-neutral-700`, className
+    )}>
       <div className="relative w-full h-full">
         {starPositions.map((posClass, index) => (
           <Stars
             key={index}
-            className={`text-neutral-700 opacity-60 ${posClass}`}
+            className={` opacity-60 ${posClass}`}
           />
         ))}
       </div>

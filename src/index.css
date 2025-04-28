@@ -206,3 +206,9 @@ html{
 .dialog-input {
   @apply px-[16px] py-[10px] bg-[#F0F0F0] rounded-[12px] w-full text-[18px]
 }
+
+.about-us-text {
+  background-image: url("./assets/images/wheatField.webp");
+  background-size: 100% 100%;
+  background-position: center;
+}

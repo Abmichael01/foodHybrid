@@ -30,6 +30,7 @@ for %%F in (*.jpg *.jpeg) do (
     )
 )
 
+
 echo.
 echo ✅ All conversions done in "%CD%"!
 pause

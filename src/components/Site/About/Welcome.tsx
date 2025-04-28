@@ -5,6 +5,7 @@ import uk from "@/assets/svgs/uk.svg";
 import usa from "@/assets/svgs/usa.svg";
 import { cn } from "@/lib/utils";
 import WelcomeText from "../WelcomeText";
+import family from "@/assets/images/family.webp";
 
 const countries = [
   {
@@ -52,30 +53,30 @@ const stats = [
 
 const Welcome: React.FC = () => {
   return (
-    <div className="section-padding mt-40 relative space-y-10 overflow-hidden">
+    <div className="section-padding relative space-y-10 overflow-hidden">
       <WelcomeText />
       <div>
         <p className="bg-[#F9F9F9] rounded-lg p-5 text-start sm:p-0 sm:bg-background text-[16px] lg:text-[24px] sm:text-[18px] sm:text-center font-satoshi flex flex-col sm:block">
           <span>
             We are more than just a food processing and packaging company.{" "}
-          </span>{" "}
-          <br />{" "}
-          <span>
-            We are a bridge connecting the{" "}
-            <strong>rich agricultural heritage of Africa</strong> with the
-            world.{" "}
-          </span>
-          <br />{" "}
-          <span>
-            Specializing in producing and packaging premium, authentic African
-            food products that speak to the heart and taste buds of our
-            customers.
           </span>
         </p>
       </div>
-      <div className="space-y-5 mt-[40px] lg:mt-20">
+      <div className="mt-[60px] rounded-[24px] overflow-hidden relative sm:h-[385.85px] lg:h-[648px]">
+        <img src={family} alt="" className="w-full h-full object-cover" />
+        <h2 className="text-[20px] font-[600] text-white absolute sm:left-[38px] sm:top-[30px] lg:left-[78px] lg:top-[60px] w-[600px] ">
+          We are a bridge connecting the rich agricultural heritage of Africa
+          with the world.
+        </h2>
+        <h2 className="text-[20px] font-[600] text-white absolute right-[38px] bottom-[30px] lg:right-[78px] lg:bottom-[60px] w-[600px] text-end z-[1]">
+          We specialize in producing and packaging premium, authentic African
+          food products that speak to the heart and taste buds of our customers.
+        </h2>
+        <div className="bg-black blur-xl w-[70%] h-[200px] lg:h-[300px] absolute right-[-50px] bottom-[-50px] opacity-[0.7]"></div>
+      </div>
+      <div className="space-y-5 mt-[80px] lg:mt-[150px]">
         <h1 className="text-center sm:text-[16px] lg:text-[20px] text-[#929292]">
-          With Operations In:
+          We operate in:
         </h1>
         <div className="flex sm:justify-center justify-between">
           {countries.map((country, index) => (
@@ -86,7 +87,11 @@ const Welcome: React.FC = () => {
                 country.className
               )}
             >
-              <img src={country.logo} alt="" className="size-[60px] sm:size-[37.06px] lg:size-auto" />
+              <img
+                src={country.logo}
+                alt=""
+                className="size-[60px] sm:size-[37.06px] lg:size-auto"
+              />
               <h1 className="hidden sm:block text-[18px] font-semibold text-center">
                 {country.name}
               </h1>
@@ -97,19 +102,22 @@ const Welcome: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-y-[40px] sm:grid-cols-4">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className="space-y-2 border-l-2 pl-[20px] border-[#911B13]"
-          >
-            {stat.icon}
-            <p className="sm:text-[14px] lg:text-[18px]">{stat.name}</p>
-            <h1 className="text-[#15221B] sm:text-[24px] lg:text-[40px] font-semibold">
-              {stat.value}
-            </h1>
-          </div>
-        ))}
+      <div className="space-y-[20px] mt-[60px] lg:mt-[120px]">
+        <h2 className="text-center sm:text-[16px] lg:text-[20px] text-[#929292] hidden ld:block">So far...</h2>
+        <div className="grid grid-cols-2 gap-y-[40px] sm:grid-cols-4">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="space-y-2 border-l-2 pl-[20px] border-[#911B13]"
+            >
+              {stat.icon}
+              <p className="sm:text-[14px] lg:text-[18px]">{stat.name}</p>
+              <h1 className="text-[#15221B] sm:text-[24px] lg:text-[40px] font-semibold">
+                {stat.value}
+              </h1>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Footer from "@/components/Site/Footer";
 import Navbar from "@/components/Site/Navbar";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -10,6 +11,7 @@ const SiteLayout: React.FC = () => {
       <div className="pb-40">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 };
