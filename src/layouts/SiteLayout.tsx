@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const SiteLayout: React.FC = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Navbar />
       <div className="pb-40">
         <Outlet />
