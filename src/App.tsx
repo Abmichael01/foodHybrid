@@ -24,6 +24,7 @@ import Beneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/Beneficiar
 import NewBeneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/NewBeneficiary";
 import ResetPassword from "./pages/PartnerDashboard/Profile/ResetPassword";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
 
         <Route path="/landing-page" element={<LandingPage />} />

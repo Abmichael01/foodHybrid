@@ -35,12 +35,16 @@ const Navbar: React.FC = () => {
               Company
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="z-[9999]">
-              <DropdownMenuItem>About us</DropdownMenuItem>
-              <DropdownMenuItem>Rewards & Loyalty Program</DropdownMenuItem>
+            <DropdownMenuContent align="start" className="z-[99999]">
+              <DropdownMenuItem>
+                <Link to="/about" >About us</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/rewards" >Rewards & Loyalty Program</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to="/#">Contact</Link>
+          <Link to="/contact">Contact</Link>
           <Link to="/shop/login">
             <button className="bg-transparent hover:bg-transparent text-[#252525] rounded-sm border border-primary py-[5px] px-7 ">
               Login
@@ -96,14 +100,14 @@ const Navbar: React.FC = () => {
               </div>
 
               <Link
-                to="/#"
+                to="/contact"
                 className="text-sm font-medium px-5 py-3 rounded-full border shadow-md"
                 onClick={toggleMobileMenu}
               >
                 Contact
               </Link>
 
-              <Link to="/shop/login" onClick={toggleMobileMenu}>
+              <Link to="/partner/login" onClick={toggleMobileMenu}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3">
                   Login
                 </Button>
