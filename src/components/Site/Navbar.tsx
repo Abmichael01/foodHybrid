@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/contact">Contact</Link>
-          <Link to="/shop/login">
+          <Link to="/partner/login">
             <button className="bg-transparent hover:bg-transparent text-[#252525] rounded-sm border border-primary py-[5px] px-7 ">
               Login
             </button>

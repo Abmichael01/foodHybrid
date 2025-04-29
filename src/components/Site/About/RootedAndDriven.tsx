@@ -19,7 +19,7 @@ import {
 
 const RootedAndDriven: React.FC = () => {
   return (
-    <section className="section-padding space-y-[80px] py-[80px] sm:py-[120px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]">
+    <section className="section-padding space-y-[80px] py-[150px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]">
       {/* Background Title */}
       <motion.h1
         variants={fadeInUp}

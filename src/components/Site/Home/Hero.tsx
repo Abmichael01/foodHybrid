@@ -4,12 +4,8 @@ import Motto from "@/components/Others/Motto";
 import { Button } from "@/components/ui/button";
 import StackedProducts from "@/components/LandingPage/StackedProducts";
 import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  staggerContainer,
-  bounceIn,
-  fadeIn
-} from "@/lib/animations";
+import { fadeInUp, staggerContainer, bounceIn, fadeIn } from "@/lib/animations";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   return (
@@ -34,7 +30,9 @@ const Hero: React.FC = () => {
         </motion.h1>
 
         <motion.div variants={bounceIn}>
-          <Button className="py-[12px] px-[20px]">Get Started</Button>
+          <Link to="/partner/register">
+            <Button className="py-[12px] px-[20px]">Get Started</Button>
+          </Link>
         </motion.div>
       </motion.div>
 
