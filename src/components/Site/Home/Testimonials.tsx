@@ -1,9 +1,20 @@
+// Testimonials.tsx
+
+"use client";
+
 import React, { useState } from "react";
 import testimonials1Img from "@/assets/images/testimonial1.webp";
 import testimonials2Img from "@/assets/images/testimonial2.webp";
 import testimonials3Img from "@/assets/images/testimonial3.webp";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+} from "@/lib/animations";
 
 const testimonials = [
   {
@@ -52,15 +63,32 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   const [index, setIndex] = useState(0);
+
   return (
-    <div className="section-padding pr-0 mt-40">
-      <div className="space-y-[20px] sm:space-y-[40px] lg:space-y-[60px] ">
-        <h2 className="section-title">Take It From Our Clients</h2>
-        <div className="hidden sm:flex gap-[33.59px] overflow-x-auto py-10 px-5 testimonials-container">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="sm:w-[247.3px] lg:w-[415.3px] p-[13.44px] shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container "
+    <motion.div
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      className="section-padding pr-0 mt-40"
+    >
+      <div className="space-y-[20px] sm:space-y-[40px] lg:space-y-[60px]">
+        <motion.h2 variants={fadeInUp} className="section-title">
+          Take It From Our Clients
+        </motion.h2>
+
+        {/* Desktop Testimonials */}
+        <motion.div
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          className="hidden sm:flex gap-[33.59px] overflow-x-auto py-10 px-5 testimonials-container"
+        >
+          {testimonials.map((testimonial, idx) => (
+            <motion.div
+              key={idx}
+              variants={fadeInUp}
+              className="sm:w-[247.3px] lg:w-[415.3px] p-[13.44px] shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container"
             >
               <div className="space-y-[7.78px]">
                 <div className="size-[60px] rounded-full bg-primary">
@@ -80,14 +108,21 @@ const Testimonials: React.FC = () => {
               <p className="sm:text-[10.42px] lg:text-[18px] font-satoshi italic">
                 {testimonial.testimonial}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Mobile Testimonial Slider */}
         <div>
-          <div className={cn(
-            "w-full p-[13.44px] sm:hidden shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container",
-            
-          )}>
+          <motion.div
+            key={index}
+            variants={index > 0 ? slideInRight : slideInLeft}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ type: "tween" }}
+            className="w-full p-[13.44px] sm:hidden shadow-xl rounded-xl shrink-0 space-y-[13.44px] testimonial-container"
+          >
             <div className="space-y-[7.78px]">
               <div className="size-[60px] rounded-full bg-primary">
                 <img
@@ -108,43 +143,40 @@ const Testimonials: React.FC = () => {
             <p className="sm:text-[10.42px] lg:text-[18px] font-satoshi italic">
               {testimonials[index].testimonial}
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className="flex justify-between sm:hidden  items-center">
+
+        {/* Mobile Pagination & Arrows */}
+        <div className="flex justify-between sm:hidden items-center">
           <div
             onClick={() => {
-              setIndex((prev) => (index === 0 ? 0 : prev - 1));
-              document.querySelector(".testimonial-container")?.classList.add("fade-in")
-              document.querySelector(".testimonial-container")?.classList.remove("fade-in")
+              if (index > 0) setIndex(index - 1);
             }}
             className={cn(
-              "p-[3px] text-[12px] text-[#15221B] border-2 rounded-full border-[#15221B] cursor-pointer",
-              index == 0 && "border-[#15221B]/20 text-[#15221B]/20 "
+              "p-[3px] text-[12px] text-[#15221B] border-2 rounded-full border-[#15221B] cursor-pointer transition-all",
+              index === 0 && "border-[#15221B]/20 text-[#15221B]/20"
             )}
           >
             <ArrowLeft />
           </div>
           <div className="flex gap-2">
-            {Array.from({ length: testimonials.length }).map((_, idx) => (
-              <div key={idx} className={cn(
-                "size-2 rounded-full bg-[#15221B]/20 transition-all duration-500",
-                idx === index && "bg-[#15221B] w-5"
-              )}>
-
-              </div>
+            {testimonials.map((_, idx) => (
+              <div
+                key={idx}
+                className={cn(
+                  "size-2 rounded-full bg-[#15221B]/20 transition-all duration-500",
+                  idx === index && "bg-[#15221B] w-5"
+                )}
+              ></div>
             ))}
           </div>
           <div
             onClick={() => {
-              setIndex((prev) =>
-                index === testimonials.length - 1
-                  ? testimonials.length - 1
-                  : prev + 1
-              );
+              if (index < testimonials.length - 1) setIndex(index + 1);
             }}
             className={cn(
-              "p-[3px] text-[12px] text-[#15221B] border-2 rounded-full border-[#15221B] cursor-pointer",
-              index == testimonials.length - 1 &&
+              "p-[3px] text-[12px] text-[#15221B] border-2 rounded-full border-[#15221B] cursor-pointer transition-all",
+              index === testimonials.length - 1 &&
                 "border-[#15221B]/20 text-[#15221B]/20"
             )}
           >
@@ -152,7 +184,7 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

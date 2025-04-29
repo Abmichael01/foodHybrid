@@ -1,3 +1,7 @@
+// Welcome.tsx
+
+"use client";
+
 import { Smile, Stars, TreePalm, Users } from "lucide-react";
 import React from "react";
 import nigeria from "@/assets/svgs/nigeria.svg";
@@ -5,13 +9,15 @@ import uk from "@/assets/svgs/uk.svg";
 import usa from "@/assets/svgs/usa.svg";
 import { cn } from "@/lib/utils";
 import WelcomeText from "../WelcomeText";
+import { motion } from "framer-motion";
+import { slideInLeft, fadeInUp, staggerContainer } from "@/lib/animations";
 
 const countries = [
   {
     name: "Nigeria",
     shortName: "NG",
     logo: nigeria,
-    className: " sm:mr-40",
+    className: "sm:mr-40",
   },
   {
     name: "United Kingdom",
@@ -53,34 +59,47 @@ const stats = [
 const Welcome: React.FC = () => {
   return (
     <div className="section-padding mt-40 relative space-y-10 overflow-hidden">
-      <WelcomeText />
-      <div>
+      <motion.div variants={slideInLeft} initial="initial" whileInView="animate" viewport={{ once: true }}>
+        <WelcomeText />
+      </motion.div>
+
+      <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
         <p className="bg-[#F9F9F9] rounded-lg p-5 text-start sm:p-0 sm:bg-background text-[16px] lg:text-[24px] sm:text-[18px] sm:text-center font-satoshi flex flex-col sm:block">
-          <span>
-            We are more than just a food processing and packaging company.{" "}
-          </span>{" "}
-          <br />{" "}
+          <span>We are more than just a food processing and packaging company. </span> <br />{" "}
           <span>
             We are a bridge connecting the{" "}
-            <strong>rich agricultural heritage of Africa</strong> with the
-            world.{" "}
+            <strong>rich agricultural heritage of Africa</strong> with the world.{" "}
           </span>
           <br />{" "}
           <span>
-            Specializing in producing and packaging premium, authentic African
-            food products that speak to the heart and taste buds of our
-            customers.
+            Specializing in producing and packaging premium, authentic African food
+            products that speak to the heart and taste buds of our customers.
           </span>
         </p>
-      </div>
+      </motion.div>
+
       <div className="space-y-5 mt-[40px] lg:mt-20">
-        <h1 className="text-center sm:text-[16px] lg:text-[20px] text-[#929292]">
+        <motion.h1
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="text-center sm:text-[16px] lg:text-[20px] text-[#929292]"
+        >
           With Operations In:
-        </h1>
-        <div className="flex sm:justify-center justify-between">
+        </motion.h1>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="flex sm:justify-center justify-between"
+        >
           {countries.map((country, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={fadeInUp}
               className={cn(
                 "flex flex-col justify-between items-center gap-5",
                 country.className
@@ -93,14 +112,22 @@ const Welcome: React.FC = () => {
               <h1 className="text-[18px] font-semibold text-center">
                 {country.shortName}
               </h1>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-      <div className="grid grid-cols-2 gap-y-[40px] sm:grid-cols-4">
+
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="grid grid-cols-2 gap-y-[40px] sm:grid-cols-4"
+      >
         {stats.map((stat, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={fadeInUp}
             className="space-y-2 border-l-2 pl-[20px] border-[#911B13]"
           >
             {stat.icon}
@@ -108,9 +135,9 @@ const Welcome: React.FC = () => {
             <h1 className="text-[#15221B] sm:text-[24px] lg:text-[40px] font-semibold">
               {stat.value}
             </h1>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
