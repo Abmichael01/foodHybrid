@@ -10,143 +10,101 @@ import riceFlour from "@/assets/images/riceFlour.webp";
 import plantainFlour from "@/assets/images/plantainFlour.webp";
 import garri from "@/assets/images/garri.webp";
 import { motion } from "framer-motion";
-import {
-  slideInLeft,
-  slideInRight,
-  fadeInUp,
-  staggerContainer,
-} from "@/lib/animations";
+import { slideInLeft, slideInRight, fadeInUp, staggerContainer } from "@/lib/animations";
 
 const tastes = [
   {
     name: "Rice",
-    description:
-      "Simplify kitchen prep with our Peeled Beans. A convenient, time-saving solution for your favorite dishes. Hand-peeled to preserve natural flavor and texture, they’re perfect for moin-moin, akara, or any traditional recipe, without the peeling hassle.",
+    description: "Simplify kitchen prep with our Peeled Beans. A convenient, time-saving solution for your favorite dishes. Hand-peeled to preserve natural flavor and texture, they’re perfect for moin-moin, akara, or any traditional recipe, without the peeling hassle.",
     img: rice,
-    idx: 0,
   },
   {
     name: "Peeled Beans",
-    description:
-      "Simplify kitchen prep with our Peeled Beans. A convenient, time-saving solution for your favorite dishes. Hand-peeled to preserve natural flavor and texture, they’re perfect for moin-moin, akara, or any traditional recipe, without the peeling hassle.",
+    description: "Simplify kitchen prep with our Peeled Beans. A convenient, time-saving solution for your favorite dishes. Hand-peeled to preserve natural flavor and texture, they’re perfect for moin-moin, akara, or any traditional recipe, without the peeling hassle.",
     img: beans,
-    idx: 1,
   },
   {
     name: "Yam Flour",
-    description:
-      "Turn mealtime into a celebration with our premium Yam Flour, the heart of the perfect amala. Made from 100% finely processed yams, it’s light, fluffy, and rich in taste. Whether paired with soups or stews, our Yam Flour guarantees a smooth and satisfying experience.",
+    description: "Turn mealtime into a celebration with our premium Yam Flour, the heart of the perfect amala. Made from 100% finely processed yams, it’s light, fluffy, and rich in taste. Whether paired with soups or stews, our Yam Flour guarantees a smooth and satisfying experience.",
     img: yamFlour,
-    idx: 2,
   },
   {
     name: "Rice Flour",
-    description:
-      "Experience the versatility of our finely milled Rice Flour, perfect for a variety of culinary delights. Made from high-quality rice grains, it serves as an excellent gluten-free alternative for baking, thickening soups, or preparing traditional African dishes like tuwo shinkafa. Its light texture and mild flavor make it an essential addition to your pantry.",
+    description: "Experience the versatility of our finely milled Rice Flour, perfect for a variety of culinary delights. Made from high-quality rice grains, it serves as an excellent gluten-free alternative for baking, thickening soups, or preparing traditional African dishes like tuwo shinkafa. Its light texture and mild flavor make it an essential addition to your pantry.",
     img: riceFlour,
-    idx: 3,
   },
   {
     name: "Plantain Flour",
-    description:
-      "Discover the wholesome goodness of our Plantain Flour, made from 100% unripe plantains. Gluten-free and rich in fiber, it’s ideal for those seeking a healthy alternative. Perfect for making swallow or pancakes, it delivers a distinct flavor that brings versatility and nutrition to your meals.",
+    description: "Discover the wholesome goodness of our Plantain Flour, made from 100% unripe plantains. Gluten-free and rich in fiber, it’s ideal for those seeking a healthy alternative. Perfect for making swallow or pancakes, it delivers a distinct flavor that brings versatility and nutrition to your meals.",
     img: plantainFlour,
-    idx: 4,
   },
   {
     name: "Garri",
-    description:
-      "Our Garri, made from finely processed cassava roots, strikes the perfect balance of crunch and smoothness. Enjoy it as a refreshing drink or as eba, a quick, nutritious meal that delivers comfort in every bite.",
+    description: "Our Garri, made from finely processed cassava roots, strikes the perfect balance of crunch and smoothness. Enjoy it as a refreshing drink or as eba, a quick, nutritious meal that delivers comfort in every bite.",
     img: garri,
-    idx: 5,
   },
 ];
 
 const OurTaste: React.FC = () => {
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true, amount: 0.2 }}
-      className="section-padding mt-40"
-    >
-      <motion.h1
+    <section className="section-padding mt-40">
+      {/* Heading Section */}
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
         variants={fadeInUp}
-        className="section-title text-center mb-[40px]"
+        className="text-center mb-10"
       >
-        Our Recipe, Your Taste
-      </motion.h1>
+        <h1 className="section-title">Our Recipe, Your Taste</h1>
+      </motion.div>
 
-      <motion.p
+      {/* Description Section */}
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
         variants={fadeInUp}
-        className="sm:text-center leading-[28px] sm:text-[16px] flex sm:block flex-col gap-y-[24px] text-start max-w-4xl mx-auto px-4"
+        className="max-w-4xl mx-auto px-4 text-center leading-7 text-base text-muted-foreground flex flex-col gap-6"
       >
         <span>
-          At Food Hybrid, every product is crafted with care, blending the
-          richness of African tradition with modern food processing techniques
-          to deliver authentic flavors that satisfy your cravings.
-        </span>{" "}
+          At Food Hybrid, every product is crafted with care, blending the richness of African tradition with modern food processing techniques to deliver authentic flavors that satisfy your cravings.
+        </span>
         <span>
-          Our recipe is simple: Natural ingredients, Expert processing, and a
-          commitment to Quality.
-        </span>{" "}
-        <span>The result? A taste that feels like Home.</span>
-      </motion.p>
+          Our recipe is simple: Natural ingredients, expert processing, and a commitment to quality.
+        </span>
+        <span>The result? A taste that feels like home.</span>
+      </motion.div>
 
+      {/* Taste Grid Section */}
       <motion.div
         variants={staggerContainer}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:px-[40px] lg:gap-x-20 lg:gap-y-10 mt-[60px]"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-x-20 lg:gap-y-10 mt-16 px-4 lg:px-10"
       >
-        {tastes.map((taste, index) =>
-          index % 2 === 0 ? (
-            <motion.div
-              key={index}
-              variants={slideInLeft}
-              className="flex flex-col space-y-[20px] bg-[#F9F9F9] rounded-[12px] px-[20px] py-[40px]"
-            >
-              <div className="flex justify-center">
-                <img
-                  src={taste.img}
-                  alt={taste.name}
-                  className="h-[160px] sm:h-[120px] lg:w-[193.5px] lg:h-[220px]"
-                />
-              </div>
-              <div>
-                <h1 className="text-[20px] sm:text-[16px] font-semibold">
-                  {taste.name}
-                </h1>
-                <p className="text-[18px] leading-[28px] sm:text-[14px] font-satoshi">
-                  {taste.description}
-                </p>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key={index}
-              variants={slideInRight}
-              className="flex flex-col space-y-[20px] bg-[#F9F9F9] rounded-[12px] px-[20px] py-[40px]"
-            >
-              <div className="flex justify-center">
-                <img
-                  src={taste.img}
-                  alt={taste.name}
-                  className="h-[160px] sm:h-[120px] lg:w-[193.5px] lg:h-[220px]"
-                />
-              </div>
-              <div>
-                <h1 className="text-[20px] sm:text-[16px] font-semibold">
-                  {taste.name}
-                </h1>
-                <p className="text-[18px] leading-[28px] sm:text-[14px] font-satoshi">
-                  {taste.description}
-                </p>
-              </div>
-            </motion.div>
-          )
-        )}
+        {tastes.map((taste, index) => (
+          <motion.div
+            key={index}
+            variants={index % 2 === 0 ? slideInLeft : slideInRight}
+            className="flex flex-col items-center space-y-6 bg-[#F9F9F9] rounded-xl p-8"
+          >
+            <img
+              src={taste.img}
+              alt={taste.name}
+              className="h-40 sm:h-32 lg:w-48 lg:h-56 object-contain"
+            />
+            <div className="text-start">
+              <h2 className="text-lg font-semibold">{taste.name}</h2>
+              <p className="mt-2 text-sm leading-6 font-satoshi text-muted-foreground">
+                {taste.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
-    </motion.div>
+    </section>
   );
 };
 
