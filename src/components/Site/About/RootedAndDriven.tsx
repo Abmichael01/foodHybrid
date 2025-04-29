@@ -14,24 +14,18 @@ import {
   zoomIn,
   bounceIn,
   staggerContainer,
-  popIn,
   floatYInfinite,
 } from "@/lib/animations";
 
 const RootedAndDriven: React.FC = () => {
   return (
-    <motion.section
-      variants={fadeInUp}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true, amount: 0.1 }}
-      className="section-padding space-y-[80px] py-[40px] sm:py-[120px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]"
-    >
+    <section className="section-padding space-y-[80px] py-[80px] sm:py-[120px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]">
       {/* Background Title */}
       <motion.h1
         variants={fadeInUp}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
         className="text-[clamp(50px,6vw,200px)] absolute right-0 top-[30px] left-0 font-[600] bg-gradient-to-b from-[#38423D] to-[#8EA89A] bg-clip-text text-transparent text-center opacity-[0.2]"
       >
         Rooted in Tradition and Driven by Innovation
@@ -41,7 +35,8 @@ const RootedAndDriven: React.FC = () => {
       <motion.h2
         variants={zoomIn}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
         className="font-[700] text-[32px] lg:text-[40px] text-center mt-[-100px] z-[1] relative"
       >
         Rooted in{" "}
@@ -54,24 +49,24 @@ const RootedAndDriven: React.FC = () => {
       <motion.div
         variants={staggerContainer}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
         className="relative flex justify-center"
       >
         <motion.div
           variants={floatYInfinite}
-          className="absolute mt-0 bottom-0 sm:bottom-0 lg:bottom-0 scale-[0.7] translate-x-[-100px] sm:translate-x-[-140px]"
+          className="absolute bottom-0 scale-[0.7] translate-x-[-100px] sm:translate-x-[-140px]"
         >
           <StackedProducts type="beans" />
         </motion.div>
-        <motion.div
-          variants={popIn}
-          className="relative mt-0 top-0 right-0 scale-[1.2] z-[999]"
+        <div
+          className="relative scale-[1.2] z-[999]"
         >
           <StackedProducts type="rice" />
-        </motion.div>
+        </div>
         <motion.div
           variants={floatYInfinite}
-          className="absolute mt-0 bottom-0 sm:bottom-0 lg:bottom-0 scale-[0.7] translate-x-[100px] sm:translate-x-[140px]"
+          className="absolute bottom-0 scale-[0.7] translate-x-[100px] sm:translate-x-[140px]"
         >
           <StackedProducts type="beans" />
         </motion.div>
@@ -81,7 +76,8 @@ const RootedAndDriven: React.FC = () => {
       <motion.h3
         variants={bounceIn}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
         className="text-[16px] lg:text-[20px] font-satoshi font-[500] text-center"
       >
         Food Hybrid is proud to offer a diverse range of high-quality food products
@@ -94,7 +90,8 @@ const RootedAndDriven: React.FC = () => {
           animate: { transition: { staggerChildren: 0.2 } },
         }}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
         className="flex justify-center relative text-white"
       >
         <motion.h3
@@ -149,7 +146,7 @@ const RootedAndDriven: React.FC = () => {
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="flex flex-col-reverse sm:flex-row mt-[60px] justify-between gap-[23.82px] lg:gap-[40px] items-center p-[23.82px] lg:p-[40px] rounded-[19.05px] lg:rounded-[32px] bg-[#111C16]"
       >
         <motion.img
@@ -157,6 +154,7 @@ const RootedAndDriven: React.FC = () => {
           src={dinner}
           alt=""
           className="w-full sm:w-[46%] shrink-1 rounded-[12.45px]"
+          loading="lazy"
         />
         <motion.h2
           variants={slideInRight}
@@ -166,7 +164,7 @@ const RootedAndDriven: React.FC = () => {
           the world to authentic African flavors.
         </motion.h2>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

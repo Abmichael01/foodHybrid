@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MenuIcon, X } from "lucide-react";
 
@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -36,11 +37,10 @@ const Navbar: React.FC = () => {
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="z-[99999]">
-              <DropdownMenuItem>
-                <Link to="/about" >About us</Link>
+              <DropdownMenuItem onClick={() => navigate("/about")}>About us
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/reward-loyalty-program" >Rewards & Loyalty Program</Link>
+              <DropdownMenuItem onClick={() => navigate("/reward-loyalty-program")}>
+                Rewards & Loyalty Program
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -72,11 +72,11 @@ const Navbar: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="absolute top-[100%] right-0 left-0 w-full bg-white shadow-lg z-[9998] p-8 flex flex-col gap-5"
+              className="absolute top-[100%] right-0 left-0 w-full bg-white shadow-lg z-[9998] p-8 flex flex-col gap-5 border-gray-50"
             >
               <Link
                 to="/#"
-                className="text-sm font-medium px-5 py-3 rounded-full border shadow-md"
+                className="text-sm font-medium px-5 py-3 border rounded-full bg-[#f9f9f9]"
                 onClick={toggleMobileMenu}
               >
                 Home
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
 
               {/* Mobile Company Dropdown (simple link for now) */}
               <div className="flex flex-col gap-3">
-                <span className="text-sm font-medium px-5 py-3 rounded-full border shadow-md flex justify-between items-center">
+                <span className="text-sm font-medium px-5 py-3 rounded-full border bg-[#f9f9f9] flex justify-between items-center">
                   Company
                   <ChevronDown className="w-4 h-4 inline-block ml-2" />
                 </span>
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="text-sm font-medium px-5 py-3 rounded-full border shadow-md"
+                className="text-sm font-medium px-5 py-3 rounded-full border bg-[#f9f9f9]"
                 onClick={toggleMobileMenu}
               >
                 Contact

@@ -1,5 +1,11 @@
+// LocatedAt.tsx
+
+"use client";
+
 import { MapPin } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
+import { slideUpAndFade, staggerContainer } from "@/lib/animations";
 
 const locations = [
   {
@@ -28,27 +34,39 @@ const locations = [
 
 const LocatedAt: React.FC = () => {
   return (
-    <div className="section-padding mt-[100px] sm:mt-[180px] flex flex-col gap-[40px]">
-      <h2 className="text-center font-[600] text-[24px] text-[#15221B]">
+    <motion.section
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={staggerContainer}
+      className="section-padding mt-[100px] sm:mt-[180px] flex flex-col gap-[40px]"
+    >
+      {/* Title */}
+      <motion.h2 variants={slideUpAndFade} className="text-center font-[600] text-[24px] text-[#15221B]">
         We're located at
-      </h2>
-      <div className="space-y-[40px] text-center font-satoshi">
+      </motion.h2>
+
+      {/* Locations List */}
+      <div className="space-y-[20px] sm:space-y-[40px] text-center font-satoshi">
         {locations.map((location, index) => (
-          <div className="flex flex-col gap-[10px] items-center">
-            <div className="p-[12px] bg-[#F4F4F4] flex items-center gap-[8px] items-center rounded-[12px] text-[20px] font-[500]">
-              <MapPin className="w-[19.2px]" />
-              <span className="">{location.country}</span>
+          <motion.div
+            key={index}
+            variants={slideUpAndFade}
+            className="flex flex-col gap-[10px] items-center"
+          >
+            <div className="p-[12px] bg-[#F4F4F4] flex items-center gap-[8px] rounded-[12px] text-[15px] sm:text-[20px] font-[500]">
+              <MapPin className="w-[14px] sm:w-[19.2px]" />
+              <span>{location.country}</span>
               {location.flag}
             </div>
-            <h1
-              className=" text-[24px] sm:text-[32px] font-[500] text-[#252525]"
-              key={index}
+            <motion.h1
               dangerouslySetInnerHTML={{ __html: location.name }}
+              className="text-[16px] sm:text-[20px] sm:text-[24px] lg:text-[32px] font-[500] text-[#252525]"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.section>
   );
 };
 

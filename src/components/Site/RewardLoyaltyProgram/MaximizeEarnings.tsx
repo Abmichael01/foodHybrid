@@ -1,6 +1,12 @@
+// MaximizeEarnings.tsx
+
+"use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
+import { motion } from "framer-motion";
 import StarField from "./StarField";
+import { fadeInUp } from "@/lib/animations";
 
 const steps = [
   {
@@ -63,10 +69,14 @@ const MaximizeEarnings: React.FC = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[40px]">
         {steps.map((step, index) => (
-          <div
+          <motion.div
             key={index}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
             className={cn(
-              "border border-[#15221B33] rounded-[24px] p-[40px] space-y-[20px] relative bg-gradient-to-br from-[#54886C] via-[#2C4839] to-[#15221B] text-white",
+              "border border-[#15221B33] rounded-[24px] p-[40px] space-y-[20px] relative bg-gradient-to-br lg:bg-none from-[#54886C] via-[#2C4839] to-[#15221B] text-white ",
               index === 2 || index === 5 ? "sm:col-span-2 text-center" : ""
             )}
           >
@@ -75,16 +85,16 @@ const MaximizeEarnings: React.FC = () => {
               {" "}
               {index + 1}. {step.title}
             </h2>
-            <div className="space-y-[20px] text-[17px]">
-              <p className="text-[]">{step.description}</p>
+            <div className="space-y-[20px] text-[17px] lg:text-[#252525]">
+              <p>{step.description}</p>
               {step.details &&
-                step.details.map((detail, index) => (
-                  <p key={index} className="">
+                step.details.map((detail, idx) => (
+                  <p key={idx} className="">
                     - {detail}
                   </p>
                 ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

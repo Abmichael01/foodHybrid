@@ -1,11 +1,16 @@
+// AnswerToQuestions.tsx
+
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "@/components/ui/accordion"
-  
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { slideInLeft, staggerContainer, slideInRight } from "@/lib/animations";
 
 const answers = [
   {
@@ -123,27 +128,45 @@ const answers = [
 
 const AnswerToQuestions: React.FC = () => {
   return (
-    <div className="section-padding space-y-[20px] lg:space-y-[60px] mt-[200px]">
+    <motion.section
+      initial="initial"
+      className="section-padding space-y-[20px] lg:space-y-[60px] mt-[200px]"
+    >
       <h1 className="font-[700] text-[#15221B] text-[32px] text-center">
         Answers to Your Questions
       </h1>
-      <div className=" space-y-[20px] py-[48px] sm:px-[24px] lg:bg-[#F9F9F9] rounded-[24px]">
+
+      <div className="space-y-[40px] py-[48px] sm:px-[24px] lg:bg-[#F9F9F9] rounded-[24px]">
         {answers.map((category, index) => (
-          <div key={index} className="space-y-[10px]">
+          <motion.div
+            key={index}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+            className="space-y-[10px]"
+          >
             <h2 className="text-lg font-[700] text-[#D3D3D3]">{category.category}</h2>
-            {/* Render the accordion for each category */}
             <Accordion type="single" collapsible className="pl-3">
               {category.questions.map((question, qIndex) => (
-                <AccordionItem value={String(qIndex)} key={qIndex}>
-                  <AccordionTrigger className="text-[16px]">{question.question}</AccordionTrigger>
-                  <AccordionContent>{question.answer}</AccordionContent>
-                </AccordionItem>
+                <motion.div
+                  key={qIndex}
+                  variants={index % 2 === 0 ? slideInLeft : slideInRight}
+                  className="w-full"
+                >
+                  <AccordionItem value={String(qIndex)}>
+                    <AccordionTrigger className="text-[16px]">
+                      {question.question}
+                    </AccordionTrigger>
+                    <AccordionContent>{question.answer}</AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
-            </Accordion> 
-          </div>
+            </Accordion>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.section>
   );
 };
 

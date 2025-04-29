@@ -4,7 +4,6 @@
 
 import React from "react";
 import megaphone from "@/assets/images/megaphone.webp";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { zoomIn, fadeInUp, bounceIn } from "@/lib/animations";
 
@@ -38,16 +37,16 @@ const NewsLetter: React.FC = () => {
       {/* Email Input */}
       <motion.div
         variants={bounceIn}
-        className="mt-[60px] flex w-full max-w-[650px] justify-between h-fit"
+        className="mt-[60px] flex gap-y-[20px] flex-col sm:flex-row items-center w-full max-w-[650px] justify-between h-fit"
       >
         <input
           type="text"
           placeholder="Enter your email address"
-          className="border text-[16px] px-[20px] w-full outline-none bg-[#F5F5F5] rounded-l-sm py-[18px]"
+          className="border text-[16px] px-[20px] w-full outline-none bg-[#F5F5F5] sm:rounded-none sm:rounded-l-sm rounded-sm py-[18px]"
         />
-        <Button className="rounded-r-sm py-[18px] px-6 hover:scale-105 transform transition-all duration-300">
+        <button className="sm:rounded-none bg-primary text-[white] border border-primary rounded-sm sm:rounded-r-sm bg-[] px-6 py-[18px] text-[16px] hover:scale-105 transform transition-all duration-300 h-full">
           Subscribe
-        </Button>
+        </button>
       </motion.div>
     </motion.section>
   );
