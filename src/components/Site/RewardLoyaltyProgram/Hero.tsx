@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         <motion.div variants={fadeInUp}>
           <Link
             to="/partner"
-            className="button bg-[#15221B] text-white mt-[30px] sm:mt-[60px] w-fit inline-block"
+            className="button bg-[#15221B] text-[14px] sm:text-[16px] text-white mt-[30px] sm:mt-[60px] w-fit inline-block"
           >
             Become a partner
           </Link>

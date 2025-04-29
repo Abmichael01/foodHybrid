@@ -27,13 +27,13 @@ const Allergy: React.FC = () => {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-[28px] lg:text-[40px] font-[600] text-[#15221B]"
+            className="text-[24px] sm:text-[28px] lg:text-[40px] font-[600] text-[#15221B]"
           >
             Allergy Awareness
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-[18px] lg:text-[24px] font-[500] font-satoshi text-start"
+            className="text-[16px] sm:text-[18px] lg:text-[24px] font-[500] font-satoshi text-start"
           >
             Allergy safety is a priority in our production. Our team is fully
             trained to adhere to HACCP protocols to prevent cross-contamination,

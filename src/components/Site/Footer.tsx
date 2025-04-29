@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
 
         {/* Call to Action */}
         <div className="space-y-[24px] flex flex-col items-center lg:items-start">
-          <h2 className="font-semibold text-[24px] lg:text-auto text-center">Get started with Food Hybrid today!</h2>
+          <h2 className="font-semibold text-[20px] sm:text-[24px] lg:text-auto text-center">Get started with Food Hybrid today!</h2>
           <button className="bg-white text-[#15221B] rounded-[4px] w-[70%] sm:w-full py-[10px] hover:bg-gray-100 transition">
             Sign up
           </button>

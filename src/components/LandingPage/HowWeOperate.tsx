@@ -45,7 +45,7 @@ const HowWeOperate: React.FC<Props> = ({ title }) => {
               variants={slideInLeft}
             >
               <CheckCircle2 className={cn(title && "fill-white text-[#15221B]")} />
-              <p className="leading-[28px] text-[18px]">{how}</p>
+              <p className="leading-[28px] text-[16px] sm:text-[18px]">{how}</p>
             </motion.div>
           ))}
         </motion.div>

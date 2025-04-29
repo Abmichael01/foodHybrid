@@ -27,7 +27,7 @@ const GetInTouch: React.FC = () => {
         <h2 className="about-us-text bg-clip-text text-transparent font-[700]">
           CONTACT
         </h2>
-        <h2 className="text-[50px] sm:text-[36px] lg:text-[60px] font-[600]">
+        <h2 className=" text-[45px] sm:text-[36px] lg:text-[60px] font-[600]">
           Get in Touch with Us
         </h2>
       </motion.div>
@@ -57,7 +57,7 @@ const GetInTouch: React.FC = () => {
           className="flex flex-col sm:flex-row items-center gap-2"
         >
           <MdPhone className="size-[30.71px] sm:size-[44.29px]" />
-          <h2 className="font-satoshi items-center text-[24px] lg:text-[32px] flex flex-col sm:flex-row">
+          <h2 className="font-satoshi items-center text-[20px] sm:text-[24px] lg:text-[32px] flex flex-col sm:flex-row">
             <span>1800-121-3637,</span> <span>+91-7052-101-786</span>
           </h2>
         </motion.div>
@@ -68,7 +68,7 @@ const GetInTouch: React.FC = () => {
           className="flex flex-col sm:flex-row items-center gap-2"
         >
           <IoIosMail className="size-[30.71px] sm:size-[44.29px]" />
-          <h2 className="text-nowrap font-satoshi text-[24px] lg:text-[32px]">
+          <h2 className="text-nowrap font-satoshi text-[20px] sm:text-[24px] lg:text-[32px]">
             info@foodhybrid.co.uk
           </h2>
         </motion.div>

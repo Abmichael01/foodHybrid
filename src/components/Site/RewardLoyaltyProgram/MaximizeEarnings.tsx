@@ -81,11 +81,11 @@ const MaximizeEarnings: React.FC = () => {
             )}
           >
             <StarField />
-            <h2 className="text-[20px] font-[600] lg:text-[#15221B] pl-[10px]">
+            <h2 className="text-[18px] sm:text-[20px] font-[600] lg:text-[#15221B] pl-[10px]">
               {" "}
               {index + 1}. {step.title}
             </h2>
-            <div className="space-y-[20px] text-[17px] lg:text-[#252525]">
+            <div className="space-y-[20px] text-[16px] sm:text-[17px] lg:text-[#252525]">
               <p>{step.description}</p>
               {step.details &&
                 step.details.map((detail, idx) => (

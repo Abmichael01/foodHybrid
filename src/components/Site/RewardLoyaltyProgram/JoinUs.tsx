@@ -26,7 +26,7 @@ const JoinUs: React.FC = () => {
         variants={slideInLeft}
         className="relative z-[1] space-y-[10px] sm:space-y-[20px] px-5 sm:px-0 "
       >
-        <h1 className="text-[24px] lg:text-[40px] font-[700]">
+        <h1 className="text-[20px] sm:text-[24px] lg:text-[40px] font-[700]">
           Join Our Rewards and Loyalty <br /> Program Today!
         </h1>
         <p className="text-[16px] sm:text-[18px] lg:text-[22px] font-[500] text-[#494949] leading-[28px]">
@@ -42,7 +42,7 @@ const JoinUs: React.FC = () => {
           variants={fadeInUp}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="button bg-[#15221BCC] text-white mt-[40px] sm:mt-[60px]"
+          className="button max-[600px]:text-[15px] bg-[#15221BCC] text-white mt-[40px] sm:mt-[60px]"
         >
           Become a partner
         </motion.button>

@@ -45,10 +45,10 @@ const Value: React.FC = () => {
         />
 
         <motion.div variants={fadeInUp} className="space-y-[20px]">
-          <h2 className="text-[20px] sm:text-[28px] lg:text-[40px] text-[#15221B] font-[600]">
+          <h2 className=" text-[19px] sm:text-[28px] lg:text-[40px] text-[#15221B] font-[600]">
             We Value You
           </h2>
-          <div className="space-y-[10px] text-[16px] sm:text-[18px] sm:text-[20px] font-[500] text-[#494949]">
+          <div className="space-y-[10px] text-[15px] sm:text-[18px] sm:text-[20px] font-[500] text-[#494949]">
             <p>
               So, we went ahead to create an exciting and rewarding Loyalty
               Program to give back and support your growth.
