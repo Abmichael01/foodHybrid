@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
                 <Link to="/about" >About us</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link to="/rewards" >Rewards & Loyalty Program</Link>
+                <Link to="/reward-loyalty-program" >Rewards & Loyalty Program</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
                   <Link to="/about" onClick={toggleMobileMenu}>
                     About us
                   </Link>
-                  <Link to="/rewards" onClick={toggleMobileMenu}>
+                  <Link to="/reward-loyalty-program" onClick={toggleMobileMenu}>
                     Rewards & Loyalty Program
                   </Link>
                 </div>

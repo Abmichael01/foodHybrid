@@ -25,6 +25,7 @@ import NewBeneficiary from "./pages/PartnerDashboard/Profile/Beneficiary/NewBene
 import ResetPassword from "./pages/PartnerDashboard/Profile/ResetPassword";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import RewardLoyaltyProgram from "./pages/RewardLoyaltyProgram";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/reward-loyalty-program" element={<RewardLoyaltyProgram />} />
         </Route>
 
         <Route path="/landing-page" element={<LandingPage />} />
