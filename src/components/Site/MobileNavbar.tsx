@@ -72,7 +72,7 @@ const MobileNavbar: React.FC = () => {
               </DropdownMenu>
               <Link to="/contact">Contact</Link>
               <Link to="/partner/login" className="w-full shadow-xl">
-                <button className="bg-transparent w-full hover:bg-transparent text-[#252525] rounded-sm border border-primary py-[5px] px-7 ">
+                <button className="bg-[#15221B] w-full cursor-pointer rounded-sm border border-primary text-white py-[10px] px-7 ">
                   Login
                 </button>
               </Link>
