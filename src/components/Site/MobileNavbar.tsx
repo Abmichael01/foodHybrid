@@ -79,18 +79,18 @@ const MobileNavbar: React.FC = () => {
             </nav>
 
             <div className="flex gap-[40px] items-center justify-center">
-              <Link to="#">
-                <FaFacebook className="size-[40px] lg:size-[45px] fill-[#252525]/80 text-white" />
+              <Link to="#" className="rounded-full shadow-lg">
+                <FaFacebook className="size-[40px] lg:size-[45px] fill-[#252525]/80 text-white " />
               </Link>
               <Link
                 to="#"
-                className="size-[40px] lg:size-[60px] bg-[#252525]/80 flex items-center justify-center rounded-full"
+                className="size-[40px] lg:size-[60px] bg-[#252525]/80 flex items-center justify-center rounded-full shadow-lg"
               >
                 <FaInstagram className="size-[25px] lg:size-[45px] text-white" />
               </Link>
               <Link
                 to="#"
-                className="size-[40px] lg:size-[60px] bg-[#252525]/80 flex items-center justify-center rounded-full"
+                className="size-[40px] lg:size-[60px] bg-[#252525]/80 flex items-center justify-center rounded-full shadow-lg"
               >
                 <FaXTwitter className="size-[25px] lg:size-[45px] text-white" />
               </Link>
