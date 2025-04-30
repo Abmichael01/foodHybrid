@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
               Company
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="z-[999]">
+            <DropdownMenuContent align="start" className="z-[9999]">
               <DropdownMenuItem onClick={() => navigate("/about")}>
                 About us
               </DropdownMenuItem>
