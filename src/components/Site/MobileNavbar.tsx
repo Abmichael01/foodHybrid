@@ -33,7 +33,7 @@ const MobileNavbar: React.FC = () => {
           )}
         >
           <div className="space-y-8 flex flex-col">
-            <div className="p-5 flex flex-col gap-5 items-center justify-center">
+            <div className="p-10 flex flex-col gap-5 items-center justify-center">
               <div className="flex justify-between items-center w-full">
                 <Logo className="w-[83px] h-[44px]" />
                 <div
@@ -52,7 +52,7 @@ const MobileNavbar: React.FC = () => {
               <Separator className="bg-[#F0F0F0] w-full" />
             </div>
 
-            <nav className="flex flex-col gap-8 text-[#252525] px-5">
+            <nav className="flex flex-col gap-8 text-[#252525] px-10">
               <Link to="/home">Home</Link>
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex gap-1 items-center outline-none cursor-pointer w-full">
@@ -78,7 +78,7 @@ const MobileNavbar: React.FC = () => {
               </Link>
             </nav>
 
-            <div className="flex gap-[40px] items-center justify-center">
+            <div className="flex gap-[40px] items-center justify-center px-10">
               <Link to="#" className="rounded-full shadow-lg">
                 <FaFacebook className="size-[40px] lg:size-[45px] fill-[#252525]/80 text-white " />
               </Link>
