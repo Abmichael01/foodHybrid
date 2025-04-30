@@ -132,7 +132,7 @@ const AnswerToQuestions: React.FC = () => {
       initial="initial"
       className="section-padding space-y-[20px] lg:space-y-[60px] mt-[200px]"
     >
-      <h1 className="font-[700] text-[#15221B] text-[32px] text-center">
+      <h1 className="font-[700] text-[#15221B] text-[20px] sm:text-[24px] lg:text-[32px] text-center">
         Answers to Your Questions
       </h1>
 

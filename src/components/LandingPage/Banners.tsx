@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const Banners: React.FC = () => {
   return (
     <motion.div
-      className="section-padding mt-20 grid grid-cols-1 sm:grid-cols-2 gap-[30px]"
+      className="section-padding mt-20 flex flex-col items-center w-full sm:grid grid-cols-1 sm:grid-cols-2 gap-[50px]"
       variants={staggerContainer}
       initial="initial"
       whileInView="animate"
@@ -16,13 +16,13 @@ const Banners: React.FC = () => {
       <motion.img
         src={riceBanner}
         alt="rice-banner"
-        className="rounded-[20px]"
+        className=" rounded-[10px] sm:rounded-[14px] lg:rounded-[20px]  w-[80%] min-[450px]:size-[400px] sm:size-[300px] lg:size-[400px]"
         variants={fadeInUp}
       />
       <motion.img
         src={beansBanner}
         alt="beans-banner"
-        className="rounded-[20px]"
+        className="rounded-[10px] sm:rounded-[14px] lg:rounded-[20px]  w-[80%] min-[450px]:size-[400px] sm:size-[300px] lg:size-[400px]"
         variants={fadeInUp}
       />
     </motion.div>

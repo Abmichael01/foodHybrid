@@ -20,7 +20,7 @@ const AtFoodHybrid: React.FC = () => {
     >
       <motion.h2
         variants={staggerContainer}
-        className="font-[700] text-[20px] sm:text-[32px] lg:text-[40px] leading-tight"
+        className="font-[700] text-[20px] sm:text-[32px] lg:text-[35px] leading-tight"
       >
         <motion.span variants={fadeInUp}>
           <span className={gradient}>

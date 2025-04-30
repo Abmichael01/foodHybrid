@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex gap-10 items-center text-[#252525]">
-          <Link to="/#">Home</Link>
+          <Link to="/home">Home</Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex gap-1 items-center outline-none cursor-pointer">
               Company
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
               className="absolute top-[100%] right-0 left-0 w-full bg-white shadow-lg z-[9998] p-8 flex flex-col gap-5 border-gray-50"
             >
               <Link
-                to="/#"
+                to="/home"
                 className="text-sm font-medium px-5 py-3 border rounded-full bg-[#f9f9f9]"
                 onClick={toggleMobileMenu}
               >

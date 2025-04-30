@@ -32,7 +32,7 @@ const Root: React.FC = () => {
           variants={slideIn}
         >
           <div>
-            <h1 className="w-[70%] sm:w-full text-[20px] sm:text-[24px] lg:text-[40px] text-[#15221B] font-[600]">
+            <h1 className="w-[70%] sm:w-full text-[20px] sm:text-[24px] lg:text-[35px] text-[#15221B] font-[600]">
               Rooted in African Tradition
             </h1>
             <div className="h-[1px] w-[40%] bg-[#15221B] relative">
@@ -41,7 +41,7 @@ const Root: React.FC = () => {
           </div>
 
           <motion.p
-            className="sm:text-[18px] lg:text-[28px] text-[#252525]"
+            className="sm:text-[18px] lg:text-[24px] text-[#252525]"
             variants={fadeIn}
           >
             With each product carrying the taste of home, designed to meet the

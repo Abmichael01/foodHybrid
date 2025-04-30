@@ -10,7 +10,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const Hero: React.FC = () => {
   return (
-    <div className="px-0 sm:px-10 section-padding relative">
+    <div className="px-0 sm:px-10 relative">
       <div className="overflow-hidden section-padding sm:rounded-[60px] relative h-[700px] pb-20 w-full bg-black">
         <img
           src={heroBgImage}

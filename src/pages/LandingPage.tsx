@@ -8,7 +8,7 @@ import React from "react";
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="flex flex-col items-start sm:items-center relative pb-10">
+    <div className="flex flex-col items-start sm:items-center relative pb-10 overflow-hidden">
       <div className="section-padding w-full hidden sm:flex sm:justify-center py-10">
         <Logo className="relative z-[2]" />
       </div>

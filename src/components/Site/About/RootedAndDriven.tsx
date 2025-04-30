@@ -19,14 +19,14 @@ import {
 
 const RootedAndDriven: React.FC = () => {
   return (
-    <section className="section-padding space-y-[80px] py-[150px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]">
+    <section className="section-padding space-y-[20px] sm:space-y-[50px] lg:space-y-[80px] py-[150px] bg-[#15221B] overflow-hidden text-white relative mt-[200px]">
       {/* Background Title */}
       <motion.h1
         variants={fadeInUp}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
-        className="text-[clamp(50px,6vw,200px)] absolute right-0 top-[30px] left-0 font-[600] bg-gradient-to-b from-[#38423D] to-[#8EA89A] bg-clip-text text-transparent text-center opacity-[0.2]"
+        className="text-[clamp(10px,4vw,55px)] leading-tight absolute right-0 top-[30px] left-0 font-[600] bg-gradient-to-b from-[#38423D] to-[#8EA89A] bg-clip-text text-transparent text-center opacity-[0.1]"
       >
         Rooted in Tradition and Driven by Innovation
       </motion.h1>
@@ -40,9 +40,9 @@ const RootedAndDriven: React.FC = () => {
         className="font-[700] text-[32px] lg:text-[40px] text-center mt-[-100px] z-[1] relative"
       >
         Rooted in{" "}
-        <span className="font-distant-stroke font-[500]">Tradition</span> and
+        <span className="font-distant-stroke font-[500] text-[48px] lg:text-[60px]">Tradition</span> and
         Driven by{" "}
-        <span className="font-distant-stroke font-[500]">Innovation</span>
+        <span className="font-distant-stroke font-[500] text-[48px] lg:text-[60px]">Innovation</span>
       </motion.h2>
 
       {/* Product Stack Section */}
@@ -158,7 +158,7 @@ const RootedAndDriven: React.FC = () => {
         />
         <motion.h2
           variants={slideInRight}
-          className="text-[18px] sm:text-[24px] lg:text-[40px] font-[700] leading-[28px] sm:leading-[40px] lg:leading-[72px] tracking-[-2%]"
+          className="text-[18px] sm:text-[24px] lg:text-[35px] font-[700] leading-[28px] sm:leading-[40px] lg:leading-[72px] tracking-[-2%]"
         >
           Each product brings the taste of home to the African diaspora while introducing
           the world to authentic African flavors.

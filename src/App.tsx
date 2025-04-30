@@ -32,13 +32,13 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<SiteLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/reward-loyalty-program" element={<RewardLoyaltyProgram />} />
         </Route>
 
-        <Route path="/landing-page" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
 
         <Route path="/partner" element={<AuthLayout />}>
           <Route index element={<AuthLanding />} />
