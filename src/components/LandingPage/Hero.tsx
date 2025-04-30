@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             variants={fadeInUp}
             className="flex gap-5 sm:gap-[62px]"
           >
-            <Link to="/">
+            <Link to="/home">
               <Button className="sm:px-14 px-5 bg-[#15221B] hover:bg-[#15221B]/90">
                 <div className="flex gap-2 items-center">
                   Visit Our website

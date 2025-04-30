@@ -1,6 +1,6 @@
 import React from 'react'
-import whiteLogo from "@/assets/svgs/whiteLogo.png"
-import blackLogo from "@/assets/svgs/darkLogo.svg"
+import whiteLogo from "@/assets/images/whiteLogo.webp"
+import blackLogo from "@/assets/images/darkLogo.webp"
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils';
 
