@@ -61,17 +61,9 @@ const Login: React.FC = () => {
       navigate('/partner/portfolio')
     },
     onError: (error: AxiosError) => {
-      if (error) {
-        const detail =
-          error?.response &&
-          error.response.data &&
-          typeof error.response.data === "object" &&
-          error.response.data !== null &&
-          "detail" in error.response.data
-            ? (error.response.data as { detail?: string }).detail
-            : "An error occurred";
-        toast.error(detail as string);
-      }
+      const errorMessage = (error.response?.data as { detail: string }).detail;
+      toast.error(errorMessage);
+      console.error("Login error:", error);
     }
   })
 
