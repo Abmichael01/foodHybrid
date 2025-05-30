@@ -10,6 +10,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import { useSidebarStore } from "@/stores/sidebarStore";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import useAuthStore from "@/stores/authStore";
 
 const navs = [
   {
@@ -36,6 +37,7 @@ const Sidebar: React.FC = () => {
   const { pathname } = useLocation();
   const currentPath = pathname.split("/")[2];
   const { isOpen, toggle } = useSidebarStore();
+  const { logout } = useAuthStore()
 
   return (
     <>
@@ -77,6 +79,7 @@ const Sidebar: React.FC = () => {
                     "w-full flex items-center gap-2 px-[48px] py-[10px]",
                     currentPath === nav.slug ? "bg-[#15221B1F]" : ""
                   )}
+                  onClick={toggle}
                 >
                   {nav.icon}
                   <p className="text-[16px]">{nav.name}</p>
@@ -95,12 +98,13 @@ const Sidebar: React.FC = () => {
               <FaCircleUser className="size-[20px] text-[#494949]" />
               Username
             </Link>
-            <Link to="/partner/login">
-              <Button className="flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px] bg-transparent hover:bg-[#f9f9f9] rounded-none shadow-none text-[#494949]">
-                <LogOut />
-                Logout
-              </Button>
-            </Link>
+            <Button onClick={() => {
+              toggle();
+              logout();
+            }} className="flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px] bg-transparent hover:bg-[#f9f9f9] rounded-none shadow-none text-[#494949]">
+              <LogOut />
+              Logout
+            </Button>
           </div>
         </div>
       </div>

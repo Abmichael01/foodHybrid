@@ -1,5 +1,6 @@
 // src/api/apiClient.ts
 import axios from "axios";
+import useAuthStore from "@/stores/authStore";
 
 const API_BASE_URL = "https://foodhybrid-backend.onrender.com"; 
 
@@ -12,12 +13,12 @@ const apiClient = axios.create({
   },
 });
 
-// Add request interceptor to inject token
+// Request Interceptor - Inject access token from Zustand store
 apiClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
+    const { access } = useAuthStore.getState();
+    if (access) {
+      config.headers["Authorization"] = `Bearer ${access}`;
     }
     return config;
   },

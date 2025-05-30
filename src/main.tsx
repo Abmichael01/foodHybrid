@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import '@/assets/fonts/fonts.css'
@@ -12,10 +12,9 @@ import { Toaster } from "@/components/ui/sonner"
 const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+
     <QueryClientProvider client={queryClient}>
       <App />
       <Toaster richColors position="top-right" />
     </QueryClientProvider>
-  </StrictMode>,
 )

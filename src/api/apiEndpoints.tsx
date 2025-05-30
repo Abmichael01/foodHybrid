@@ -1,5 +1,5 @@
 import apiClient from "./apiClient";
-import { PartnerSignupData } from "@/types";
+import { PartnerSigninData, PartnerSignupData, ResponseData } from "@/types";
 
 export const partnerSignup = async (
   data: Partial<PartnerSignupData>,
@@ -26,8 +26,8 @@ export const verifyOtp = async (
 };
 
 export const partnerSignin = async (
-  data: Partial<PartnerSignupData>
-): Promise<unknown> => {
+  data: Partial<PartnerSigninData>
+): Promise<ResponseData> => {
   const res = await apiClient.post("/users/signin/partner/", data);
   return res.data;
 };

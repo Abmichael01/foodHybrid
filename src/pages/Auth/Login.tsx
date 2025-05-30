@@ -14,6 +14,11 @@ import PageTitle from "@/components/Auth/PageTitle";
 import { Loader2Icon, LockKeyhole, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useNavigate } from "react-router-dom";
+import { partnerSignin } from "@/api/apiEndpoints";
+import { PartnerSigninData } from "@/types";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import useAuthStore from "@/stores/authStore";
 
 const formSchema = z.object({
   usernameEmail: z.string(),
@@ -44,18 +49,31 @@ const Login: React.FC = () => {
     },
   });
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = React.useState(false);
+  const { setAuth } = useAuthStore();
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data: PartnerSigninData) => partnerSignin(data),
+    onSuccess: (data) => {
+      console.log(data)
+      setAuth(data?.tokens as { access: string; refresh: string });
+      toast.success(data?.detail || "Login successful");
+      navigate('/partner/portfolio')
+    },
+    onError: (error: unknown) => {
+      if (error) {
+        toast.error(error?.response?.data?.detail as string)
+      }
+    }
+  })
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate("/partner/portfolio")
-    }, 2000);
-    console.log(values);
+   const data: PartnerSigninData = {
+      username: values.usernameEmail,
+      password: values.password,
+      user_type: "partner",
+    };
+    mutate(data)
   }
   return (
     <Form {...form}>
@@ -110,7 +128,7 @@ const Login: React.FC = () => {
           disabled={!form.formState.isDirty}
           className="w-full cursor-pointer py-[18px]"
         >
-          {isLoading && <Loader2Icon className="animate-spin" /> }
+          {isPending && <Loader2Icon className="animate-spin" /> }
           Log in
         </Button>
       </form>
