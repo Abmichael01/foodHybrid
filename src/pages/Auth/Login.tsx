@@ -19,6 +19,7 @@ import { PartnerSigninData } from "@/types";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import useAuthStore from "@/stores/authStore";
+import { AxiosError } from "axios";
 
 const formSchema = z.object({
   usernameEmail: z.string(),
@@ -59,9 +60,17 @@ const Login: React.FC = () => {
       toast.success(data?.detail || "Login successful");
       navigate('/partner/portfolio')
     },
-    onError: (error: unknown) => {
+    onError: (error: AxiosError) => {
       if (error) {
-        toast.error(error?.response?.data?.detail as string)
+        const detail =
+          error?.response &&
+          error.response.data &&
+          typeof error.response.data === "object" &&
+          error.response.data !== null &&
+          "detail" in error.response.data
+            ? (error.response.data as { detail?: string }).detail
+            : "An error occurred";
+        toast.error(detail as string);
       }
     }
   })
