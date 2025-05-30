@@ -159,7 +159,7 @@ html{
   }
 
   .auth-input {
-    @apply border px-[20px] py-[18px] rounded-xs w-full border-auth-foreground outline-none bg-background
+    @apply px-[20px] py-[18px] rounded-xs w-full border-0 outline-none bg-[#F9F9F9]
   }
 
   .motto-fancy-text {

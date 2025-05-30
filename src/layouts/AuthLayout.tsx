@@ -9,22 +9,8 @@ import Logo from "@/components/Others/Logo";
 const AuthLayout: React.FC = () => {
   return (
     <div className="flex overflow-hidden max-w-screen relative">
-      <img
-        src={patterns}
-        alt=""
-        className="w-[669px] h-[669px] rounded-full absolute top-[-440px] right-[-440px] lg:block hidden"
-      />
-      <img
-        src={patterns}
-        alt=""
-        className="w-[400px] h-[400px] rounded-full absolute top-[-200px] right-[-200px] hidden sm:block lg:hidden"
-      />
-      <img
-        src={patterns}
-        alt=""
-        className="w-[200px] h-[200px] rounded-full absolute top-[-100px] right-[-100px] sm:hidden"
-      />
-      <div className="p-5 w-1/2 shrink-0 h-screen sticky top-0 left-0 lg:block hidden">
+      
+      <div className="p-0 md:p-5 w-full md:w-1/2 shrink-0 h-screen top-0 left-0 fixed md:sticky">
         <div className="rounded-xl h-full overflow-hidden relative before:absolute before:inset-0 before:bg-black/20 before:backdrop-blur-[2px] ">
           <div className="absolute top-0 right-0 left-0 z-[3] flex justify-center mt-5">
             <Logo color="black" />{" "}
@@ -33,8 +19,15 @@ const AuthLayout: React.FC = () => {
           <img src={image} alt="" className="w-full h-full object-cover" />
         </div>
       </div>
-      <div className="w-full py-14 px-5 sm:px-10 md:px-20 lg:px-14  flex items-center min-h-screen">
-        <Outlet />
+      <div className=" relative w-full pb-10 pt-20 p-2 min-[500px]:px-5 sm:px-10 md:px-20 lg:px-14  flex items-center justify-center md:justify-start min-h-screen">
+        <div className="bg-white w-full md:bg-transparent rounded-xl p-6 max-sm:px-[20px] max-sm:py-[40px] h-fit md:h-full">
+          <Outlet />
+        </div>
+        <img
+        src={patterns}
+        alt=""
+        className="w-[669px] h-[669px] rounded-full absolute top-[-440px] right-[-440px] md:block hidden"
+      />
       </div>
     </div>
   );
