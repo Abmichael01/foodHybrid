@@ -32,7 +32,7 @@ const Stage5: React.FC = () => {
   const { updateUserData, userData } = usePartnerSignupStore();
 
   const { mutate, isPending } = useMutation({
-    mutationFn: (data: Partial<PartnerSignupData>) => partnerSignup(data),
+    mutationFn: (data: Partial<PartnerSignupData>) => partnerSignup(data, { method: "PATCH" }),
     onSuccess: () => {
       toast.success("Account created successfully!");
       navigate("/partner/login");
