@@ -25,5 +25,15 @@ export type PartnerSigninData = {
 export type ResponseData = {
   detail?: string;
   tokens?: { access: string; refresh: string };
-  message: string;
+  message?: string;
 };
+
+export type ShopProduct = {
+  id: number;
+  name: string;
+  price: string;
+  product_id: string;
+  roi_percentage: string;
+  stock_quantity: number;
+  description: string;
+}

@@ -113,7 +113,7 @@ const Login: React.FC = () => {
                 <div className="flex justify-end">
                   {formField.name === "password" && (
                     <Link
-                      to="/auth/forgot-password"
+                      to="/partner/forgot-password?stage=1"
                       className="float-right text-sm text-[#15221B]"
                     >
                       Forgot Password

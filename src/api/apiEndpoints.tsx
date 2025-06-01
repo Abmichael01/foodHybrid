@@ -1,5 +1,7 @@
 import apiClient from "./apiClient";
-import { PartnerSigninData, PartnerSignupData, ResponseData } from "@/types";
+import { PartnerSigninData, PartnerSignupData, ResponseData, ShopProduct } from "@/types";
+
+// Auth
 
 export const partnerSignup = async (
   data: Partial<PartnerSignupData>,
@@ -31,3 +33,28 @@ export const partnerSignin = async (
   const res = await apiClient.post("/users/signin/partner/", data);
   return res.data;
 };
+
+
+export const forgotPassword = async (
+  data: Partial<PartnerSignupData>
+): Promise<ResponseData> => {
+  const res = await apiClient.post("/users/forgot-password/partner/", data);
+  return res.data;
+};
+
+
+
+// Shop
+export const getShopProducts = async (): Promise<ShopProduct[]> => {
+    const res = await apiClient.get("/shops/products/");
+    return res.data;
+}
+
+
+// Wallet
+export const getBeneficiaries = async (): Promise<unknown> => {
+  const res = await apiClient.get("/wallet/beneficiaries/");
+  return res.data;
+};
+
+

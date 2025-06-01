@@ -1,69 +1,38 @@
-import React from 'react'
-import rice from "@/assets/images/shop-rice.webp"
-import beans from "@/assets/images/shop-beans.webp"
-import ShopItem from './ShopItem'
-
-const items = [
-    {
-        name: "Food Hybrid Rice",
-        bagsPerUnit: 5,
-        price: 153,
-        img: rice,
-    },
-    {
-        name: "Food Hybrid Beans",
-        bagsPerUnit: 2,
-        price: 343,
-        img: beans,
-    },
-    {
-        name: "Food Hybrid Rice",
-        bagsPerUnit: 5,
-        price: 153,
-        img: rice,
-    },
-    {
-        name: "Food Hybrid Beans",
-        bagsPerUnit: 2,
-        price: 343,
-        img: beans,
-    },
-    {
-        name: "Food Hybrid Rice",
-        bagsPerUnit: 5,
-        price: 153,
-        img: rice,
-    },
-    {
-        name: "Food Hybrid Beans",
-        bagsPerUnit: 2,
-        price: 343,
-        img: beans,
-    },
-    {
-        name: "Food Hybrid Rice",
-        bagsPerUnit: 5,
-        price: 153,
-        img: rice,
-    },
-    {
-        name: "Food Hybrid Beans",
-        bagsPerUnit: 2,
-        price: 343,
-        img: beans,
-    },
-]
+// ShopItems.tsx
+import React from "react";
+import ShopItem from "./ShopItem";
+import ShopItemSkeleton from "./ShopItemSkeleton";
+import { useQuery } from "@tanstack/react-query";
+import { getShopProducts } from "@/api/apiEndpoints";
 
 const ShopItems: React.FC = () => {
-  return (
-    <div className='space-y-[24px]'>
-        {items.map((item, index) => (
-            <div key={index}>
-                <ShopItem item={item} />
-            </div>
-        ))}
-    </div>
-  )
-}
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["shopItems"],
+    queryFn: getShopProducts,
+  });
 
-export default ShopItems
+  console.log(data);
+
+  if (isLoading) {
+    return (
+      <div>
+        {/* Render multiple skeleton items */}
+        {Array.from({ length: 6 }).map((_, index) => (
+          <ShopItemSkeleton key={index} />
+        ))}
+      </div>
+    );
+  }
+
+  if (error) return <div>Error loading products</div>;
+
+  return (
+    <div>
+      {data?.map((item, index) => (
+        <ShopItem key={index} item={item} />
+      ))}
+    </div>
+  );
+};
+
+export default ShopItems;

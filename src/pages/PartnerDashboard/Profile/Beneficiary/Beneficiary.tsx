@@ -14,6 +14,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { useQuery } from "@tanstack/react-query";
+import { getBeneficiaries } from "@/api/apiEndpoints";
 
 export const dummyBeneficiaries = [
   {
@@ -34,6 +36,12 @@ export const dummyBeneficiaries = [
 ];
 
 const Beneficiary: React.FC = () => {
+  const { data } = useQuery({
+    queryKey: ["beneficiaries"],
+    queryFn: getBeneficiaries,
+  })
+
+  console.log(data);
   return (
     <div className="space-y-10">
       <div className="flex justify-between items-center">
