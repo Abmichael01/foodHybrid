@@ -14,26 +14,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useQuery } from "@tanstack/react-query";
-import { getBeneficiaries } from "@/api/apiEndpoints";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { deleteBeneficiary, getBeneficiaries } from "@/api/apiEndpoints";
+import { toast } from "sonner";
 
-export const dummyBeneficiaries = [
-  {
-    name: "Emmanuel Ayomide Ebo",
-    accountNumber: "1122334455",
-    bankName: "Lloyds Bank",
-  },
-  {
-    name: "Jane Smith",
-    accountNumber: "9876543210",
-    bankName: "First Bank",
-  },
-  {
-    name: "Michael Johnson",
-    accountNumber: "1234509876",
-    bankName: "GTBank",
-  },
-];
+
 
 const Beneficiary: React.FC = () => {
   const { data } = useQuery({
@@ -41,6 +26,25 @@ const Beneficiary: React.FC = () => {
     queryFn: getBeneficiaries,
   })
 
+  const queryClient = useQueryClient();
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: (id: number) => deleteBeneficiary(id),
+    onSuccess: () => {
+      // Invalidate the query to refetch beneficiaries after deletion
+      queryClient.invalidateQueries({ queryKey: ["beneficiaries"] });
+      toast.success("Beneficiary removed successfully");
+    }
+  })
+
+  // Log the data for debugging
+  // const deleteBeneficiary = (id: number) => {
+  //   mutate(id, {
+  //     onSuccess: () => {
+  //       dismiss();
+  //     },
+  //   });
+  // }
   console.log(data);
   return (
     <div className="space-y-10">
@@ -54,7 +58,7 @@ const Beneficiary: React.FC = () => {
       </div>
       <div className="space-y-4">
         <div className="space-y-[8px]">
-          {dummyBeneficiaries.map((beneficiary, index) => (
+          {data?.map((beneficiary, index) => (
             <div
               key={index}
               className="border-b px-[12px] py-[8px] flex justify-between items-center"
@@ -64,7 +68,7 @@ const Beneficiary: React.FC = () => {
                 <div className="">
                   <h1 className="text-[18px] font-[600]">{beneficiary.name}</h1>
                   <p className="font-satoshi text-[14px]">
-                    {beneficiary.accountNumber} | {beneficiary.bankName}
+                    {beneficiary.account_number} | {beneficiary.bank_name}
                   </p>
                 </div>
               </div>
@@ -80,12 +84,17 @@ const Beneficiary: React.FC = () => {
                       Are you absolutely sure?
                     </AlertDialogTitle>
                     <AlertDialogDescription className="text-center mt-[20px] text-[19px] font-[500]">
-                    Are you sure you want to remove ‘Emmanuel Ayomide Ebo’ as a Beneficiary?
+                    Are you sure you want to remove <span className="font-semibold">‘{beneficiary.name}’ </span> as a Beneficiary?
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter className="flex gap-[8px] w-full mt-[20px]">
                     <AlertDialogCancel className="button text-[#494949] flex-1">No, Cancel</AlertDialogCancel>
-                    <AlertDialogAction className="flex-1 button bg-[#15221B] hover:bg-[#15221B]/90">Yes, Remove</AlertDialogAction>
+                    <AlertDialogAction onClick={() => {
+                      mutate(beneficiary?.id as number);
+                      if (isPending) toast.info("Removing beneficiary...", {
+                        duration: Infinity,
+                      });
+                    }} className="flex-1 button bg-[#15221B] hover:bg-[#15221B]/90">{ !isPending ?  "Yes, Remove" : "Removing...." }</AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>

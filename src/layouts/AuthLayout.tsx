@@ -10,7 +10,7 @@ const AuthLayout: React.FC = () => {
   return (
     <div className="flex overflow-hidden max-w-screen relative">
       
-      <div className="p-0 md:p-5 w-full md:w-1/2 shrink-0 h-screen top-0 left-0 fixed md:sticky">
+      <div className="p-0 md:p-5 w-full md:w-1/2 shrink-0 h-full top-0 left-0 absolute md:sticky">
         <div className="rounded-xl h-full overflow-hidden relative before:absolute before:inset-0 before:bg-black/20 before:backdrop-blur-[2px] ">
           <div className="absolute top-0 right-0 left-0 z-[3] flex justify-center mt-5">
             <Logo color="black" />{" "}

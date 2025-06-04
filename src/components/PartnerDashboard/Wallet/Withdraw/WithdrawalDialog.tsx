@@ -9,10 +9,10 @@ import { FaMoneyBill } from "react-icons/fa";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Beneficiary from "./Beneficiary";
 import WithdrawalAmount from "./WithdrawalAmount";
-import NewBeneficiary from "./NewBeneficiary";
 import { ArrowLeft } from "lucide-react";
 import EnterPin from "./EnterPin";
 import ProcessingWithdrawal from "./ProcessingWithdrawal";
+import AddBeneficiary from "../../Profile/Beneficiary/AddBeneficiary";
 
 const WithdrawalDialog: React.FC = () => {
   const [params] = useSearchParams();
@@ -34,7 +34,7 @@ const WithdrawalDialog: React.FC = () => {
         </DialogHeader>}
         {dialogCurrent === "beneficiary" || !dialogCurrent && <Beneficiary /> }
         {dialogCurrent === "amount" && <WithdrawalAmount /> }
-        {dialogCurrent === "newBeneficiary" && <NewBeneficiary /> }
+        {dialogCurrent === "newBeneficiary" && <AddBeneficiary redirectTo="/partner/portfolio/wallet?dialog=walletWithdrawal" /> }
         {dialogCurrent === "enterPin" && <EnterPin /> }
         {dialogCurrent === "processing" && <ProcessingWithdrawal /> }
       </DialogContent>

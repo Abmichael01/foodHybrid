@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,14 +9,20 @@ import {
 
 interface Props {
     price: number;
+    unit: number;
+    setUnit: ( unit: number ) => void;
 }
 
-const PriceCalculator: React.FC<Props> = ({ price }) => {
+const PriceCalculator: React.FC<Props> = ({ price, unit, setUnit }) => {
     const [ totalPrice, setTotalPrice ] = useState(price)
     const onChangeUnit = (value: string) => {
-        const unit = Number(value)
-        setTotalPrice(unit * price)
+        setUnit(Number(value))
     }
+
+    useEffect(() => {
+    setTotalPrice(unit * price)
+    }, [unit, price]);
+
   return (
     <div className="flex items-center gap-[10px]">
       <Select onValueChange={onChangeUnit} defaultValue={"1"}>

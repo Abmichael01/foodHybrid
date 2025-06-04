@@ -1,5 +1,15 @@
 import apiClient from "./apiClient";
-import { PartnerSigninData, PartnerSignupData, ResponseData, ShopProduct } from "@/types";
+import {
+  AddToCartData,
+  BeneficiaryData,
+  PartnerSigninData,
+  PartnerSignupData,
+  ResponseData,
+  ShopProduct,
+  TransactionPinData,
+  UserDetails,
+  ViewCartData,
+} from "@/types";
 
 // Auth
 
@@ -34,7 +44,6 @@ export const partnerSignin = async (
   return res.data;
 };
 
-
 export const forgotPassword = async (
   data: Partial<PartnerSignupData>
 ): Promise<ResponseData> => {
@@ -42,19 +51,79 @@ export const forgotPassword = async (
   return res.data;
 };
 
-
-
 // Shop
 export const getShopProducts = async (): Promise<ShopProduct[]> => {
-    const res = await apiClient.get("/shops/products/");
-    return res.data;
-}
+  const res = await apiClient.get("/shops/products/");
+  return res.data;
+};
 
+// Cart
+export const addProductToCart = async (
+  data: AddToCartData
+): Promise<unknown> => {
+  const res = await apiClient.post("/cart/addproducttocart/", data);
+  return res.data;
+};
+
+export const removeProductFromCart = async (
+  data: Partial<AddToCartData>
+): Promise<unknown> => {
+  const res = await apiClient.delete("/cart/remove/", {
+    data,
+  });
+  return res.data;
+};
+
+export const viewCart = async (): Promise<ViewCartData> => {
+  const res = await apiClient.get("/cart/viewcart/");
+  return res.data;
+};
 
 // Wallet
-export const getBeneficiaries = async (): Promise<unknown> => {
+export const getBeneficiaries = async (): Promise<BeneficiaryData[]> => {
   const res = await apiClient.get("/wallet/beneficiaries/");
   return res.data;
 };
 
+export const addBeneficiary = async (
+  data: BeneficiaryData
+): Promise<unknown> => {
+  const res = await apiClient.post("/wallet/beneficiaries/", data);
+  return res.data;
+};
 
+export const deleteBeneficiary = async (id: number): Promise<unknown> => {
+  const res = await apiClient.delete(`/wallet/beneficiaries/${id}/`);
+  return res.data;
+};
+
+export const walletWithdrawal = async (data: {
+  amount: number;
+  to: string;
+  transaction_pin: string;
+}): Promise<unknown> => {
+  const res = await apiClient.post("/wallet/withdraw/", data);
+  return res.data;
+};
+
+// User
+
+export const getCurrentUser = async (): Promise<UserDetails> => {
+  const res = await apiClient.get("/users/getDetails/");
+  return res.data;
+};
+
+export const setTransactionPin = async (
+  data?: TransactionPinData
+): Promise<unknown> => {
+  const res = await apiClient.post("/wallet/set-transaction-pin/", data || {});
+  return res.data;
+};
+
+export const checkTransactionPin = async (data: {
+  password: string;
+}): Promise<unknown> => {
+  console.log(data);
+  const res = await apiClient.post("/users/retrieve-pin/partner/", data);
+  return res.data;
+};

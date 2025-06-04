@@ -11,13 +11,16 @@ import FundWalletDialog from "@/components/PartnerDashboard/Wallet/Fund/FundWall
 import WithdrawFromWallet from "@/components/PartnerDashboard/Wallet/Withdraw/WithdrawalDialog";
 import WithdrawFromPortfolio from "@/components/PartnerDashboard/Portfolio/Withdraw/WithdrawalDialog";
 import { toast } from "sonner";
+import { getCurrentUser } from "@/api/apiEndpoints";
+import useUserDetailsStore from "@/stores/userStore";
 
 const DashboardLayout: React.FC = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated, logout } = useAuthStore();
   const { openDialog } = useDialogStore();
   const [searchParams] = useSearchParams();
   const dialog = searchParams.get("dialog");
+  const { setUserDetails } = useUserDetailsStore()
 
   // Trigger dialog if present in URL
   useEffect(() => {
@@ -28,11 +31,22 @@ const DashboardLayout: React.FC = () => {
 
   // Redirect if not authenticated
   useEffect(() => {
-    if (!isAuthenticated) {
-      toast.info("Please log in to access the dashboard");
-      navigate("/partner/login", { replace: true });
-    }
-  }, [isAuthenticated, navigate]);
+    const verifyUser = async () => {
+      try {
+        const data = await getCurrentUser();
+        console.log(data);
+        setUserDetails(data);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (error) {
+        toast.error("Session expired. Please login again");
+        logout();
+        navigate("/partner/login", { replace: true });
+      }
+    };
+
+      verifyUser();
+  }, [isAuthenticated, logout]);
+
 
   // Optional: Show loading state or splash screen here
   if (!isAuthenticated) {

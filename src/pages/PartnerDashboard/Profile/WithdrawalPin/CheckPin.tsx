@@ -1,10 +1,42 @@
+import { checkTransactionPin } from "@/api/apiEndpoints";
 import { Button } from "@/components/ui/button";
+import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 const CheckPin: React.FC = () => {
   const [showPin, setShowPin] = useState(false);
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { mutate } = useMutation({
+    mutationFn: async (data: { password: string }) => checkTransactionPin(data),
+    onSuccess: (data) => {
+      toast.success("Password verified successfully!");
+      setShowPin(true);
+      setIsLoading(false);
+      console.log(data)
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+      setIsLoading(false);
+    },
+  })
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!password.trim()) {
+      alert("Please enter your password");
+      return;
+    }
+    mutate({ password });
+
+    setIsLoading(true);
+  };
+
   return (
     <div className="space-y-10">
       <div className="flex justify-between items-center">
@@ -17,7 +49,7 @@ const CheckPin: React.FC = () => {
       </div>
       <div className=" flex justify-center">
         {!showPin && (
-          <div className="space-y-[60px] w-full md:w-[698px]  items-center">
+          <form onSubmit={handleSubmit} className="space-y-[60px] w-full md:w-[698px]  items-center">
             <div className="space-y-[8px] flex flex-col items-center w-full ">
               <label htmlFor="password" className="text-[14px] text-[#6E6E6E]">
                 Password
@@ -27,14 +59,21 @@ const CheckPin: React.FC = () => {
                 type="password"
                 name="new-password"
                 autoComplete="new-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="py-[18px] px-[20px] border border-[#6E6E6E] w-full"
                 placeholder="Enter your login password"
+                required
               />
             </div>
-            <Button onClick={() => setShowPin(true)} className="w-full">
-              Next
+            <Button 
+              type="submit" 
+              className="w-full"
+              disabled={isLoading || !password.trim()}
+            >
+              {isLoading ? "Verifying..." : "Next"}
             </Button>
-          </div>
+          </form>
         )}
 
         {showPin && (

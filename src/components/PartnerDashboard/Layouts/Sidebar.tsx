@@ -10,6 +10,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import { useSidebarStore } from "@/stores/sidebarStore";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import { IoGlobeOutline } from "react-icons/io5";
 import useAuthStore from "@/stores/authStore";
 
 const navs = [
@@ -17,19 +18,25 @@ const navs = [
     name: "Portfolio",
     icon: <IoBagHandleOutline />,
     slug: "portfolio",
-    link: "portfolio",
+    link: "/partner/portfolio",
   },
   {
     name: "Shop",
     icon: <FiShoppingBag />,
     slug: "shop",
-    link: "shop",
+    link: "/partner/shop",
   },
   {
     name: "My Orders",
     icon: <RiBox3Line />,
     slug: "my-orders",
-    link: "my-orders?tab=processing",
+    link: "/partner/my-orders?tab=processing",
+  },
+  {
+    name: "Visit Website",
+    icon: <IoGlobeOutline />,
+    slug: "visit-website",
+    link: "/home",
   },
 ];
 
@@ -44,15 +51,15 @@ const Sidebar: React.FC = () => {
       {isOpen && (
         <div
           onClick={toggle}
-          className="bg-black/40 fixed inset-0 backdrop-blur-[4px]"
+          className="bg-black/40 fixed inset-0 backdrop-blur-[4px] block lg:hidden"
         ></div>
       )}
-      <div className="relative size-fit">
+      <div className="relative size-fit z-[99999]">
         {isOpen && (
           <div
             onClick={toggle}
             className={cn(
-              "px-2 py-2 rounded-xl bg-white absolute left-[210px] top-[5px] opacity-[0] cursor-pointer transition-all duration-500 ease-initial",
+              "px-2 py-2 rounded-xl bg-white absolute left-[210px] top-[5px] opacity-[0] cursor-pointer",
               isOpen && "opacity-[1]"
             )}
           >
@@ -61,8 +68,8 @@ const Sidebar: React.FC = () => {
         )}
         <div
           className={cn(
-            "w-[205px] left-[-210px] lg:left-[0] fixed lg:relative h-[100vh] shrink-0 bg-white flex flex-col gap-4 pb-10 justify-between transition-all duration-300 ease-initial",
-            isOpen && "left-[0] z-[9999]"
+            "w-[205px] left-[-210px] lg:left-[0] fixed lg:relative h-[100vh] shrink-0 bg-white flex flex-col gap-4 pb-10 justify-between transition-all duration-500 z-[9999]",
+            isOpen && "left-[0] "
           )}
         >
           <div>
@@ -74,9 +81,9 @@ const Sidebar: React.FC = () => {
               {navs.map((nav, index) => (
                 <Link
                   key={index}
-                  to={`/partner/${nav.link}`}
+                  to={`${nav.link}`}
                   className={cn(
-                    "w-full flex items-center gap-2 px-[48px] py-[10px]",
+                    "w-full flex items-center gap-2 px-[30px] py-[10px]",
                     currentPath === nav.slug ? "bg-[#15221B1F]" : ""
                   )}
                   onClick={toggle}
@@ -94,6 +101,7 @@ const Sidebar: React.FC = () => {
                 "flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px]",
                 currentPath === "profile" ? "bg-[#15221B1F]" : ""
               )}
+              onClick={toggle}
             >
               <FaCircleUser className="size-[20px] text-[#494949]" />
               Username

@@ -26,14 +26,14 @@ const Overview: React.FC = () => {
             </h1>
           </div>
           <div className="grid grid-cols-2">
-            <div className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
+            <Link to="?dialog=withdrawFromWallet" className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
               <FiUpload className="size-[15px]" />
               <h1 className="text-[12px]">Withdraw</h1>
-            </div>
-            <div className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
+            </Link>
+            <Link to="?dialog=fundWallet" className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
               <FaPlus className="size-[15px]" />
               <h1 className="text-[12px]">Fund</h1>
-            </div>
+            </Link>
           </div>
         </OverviewCard>
         <OverviewCard className="w-full sm:w-[313px]">
@@ -56,10 +56,10 @@ const Overview: React.FC = () => {
               <span className="text-[#16A34A]">+5.16%</span> (+£105) Today
             </h1>
           </div>
-          <div className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
+          <Link to="" className="text-center flex flex-col gap-[2px] items-center cursor-pointer">
             <FiUpload className="size-[15px]" />
             <h1 className="text-[12px]">Withdraw</h1>
-          </div>
+          </Link>
         </OverviewCard>
       </div>
   )
