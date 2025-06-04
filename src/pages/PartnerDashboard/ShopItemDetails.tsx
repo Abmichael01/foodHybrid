@@ -55,6 +55,7 @@ const item = {
 };
 
 const ShopItemDetails: React.FC = () => {
+  const [unit, setUnit] = React.useState(1);
   return (
     <div className="space-y-[30px]">
       <Link to="/partner/shop">
@@ -75,7 +76,9 @@ const ShopItemDetails: React.FC = () => {
                 <p className="text-[14px] font-satoshi font-[500]">
                   1 unit = {item.bagsPerUnit} bags
                 </p>
-                <PriceCalculator price={item.price} />
+                <PriceCalculator price={item.price} 
+                unit={unit} setUnit={setUnit}
+                />
               </div>
               <Button
                 variant={"outline"}
