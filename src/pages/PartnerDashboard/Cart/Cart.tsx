@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CartItem as CartItemType } from "@/types";
 import useCartStore from "@/stores/cartStore";
-import CartItem from "@/components/PartnerDashboard/Cart/CartItem";
+import CartItems from "@/components/PartnerDashboard/Cart/CartItems";
 import CartSummary from "@/components/PartnerDashboard/Cart/CartSummary";
 import { useQuery } from "@tanstack/react-query";
 import { viewCart } from "@/api/apiEndpoints";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Cart: React.FC = () => {
-  const { items, updateCart, getItemCount } = useCartStore();
+  const { items, updateCart } = useCartStore();
   const { data } = useQuery({
     queryKey: ["cartItems"],
     queryFn: viewCart,
@@ -25,34 +25,28 @@ const Cart: React.FC = () => {
 
   return (
     <div className="space-y-[30px]">
-      <h2 className="text-[24px] flex items-center gap-1">
-        Cart <span className="text-[14px]">({getItemCount()})</span>
-      </h2>
+      {items.length === 0 ? (
+        <div className="flex flex-col items-center justify-center h-[200px]">
+          <h2 className="text-[30px] font-semibold font-satoshi">
+            Your cart is empty.
+          </h2>
+          <Link
+            to="/partner/shop"
+            className="text-white mt-5 text-[14px] font-medium bg-[#15221B] button"
+          >
+            Browse products
+          </Link>
+        </div>
+      ) : (
+        <>
+          <CartItems items={items} title="Cart" />
+          <CartSummary items={items} />
 
-      <div className="space-y-[20px]">
-        {items?.map((item) => (
-          <CartItem key={item.product_id} item={item} />
-        ))}
-        
-        {items.length === 0 && (
-          <div className="flex flex-col items-center justify-center h-[200px]">
-            <h2 className="text-[30px] font-semibold font-satoshi">
-              Your cart is empty.
-            </h2>
-            <Link
-              to="/partner/shop"
-              className="text-white mt-5 text-[14px] font-medium bg-[#15221B] button"
-            >
-              Browse products
-            </Link>
-          </div>
-        )}
-        
-        {items.length !== 0 && <CartSummary items={items} />}
-        <Button className="w-full bg-primary">
-          Checkout
-        </Button>
-      </div>
+          <Link to="/partner/cart/delivery-information">
+            <Button className="w-full bg-primary">Checkout</Button>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

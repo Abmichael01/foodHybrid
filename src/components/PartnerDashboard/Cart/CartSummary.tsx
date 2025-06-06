@@ -1,11 +1,16 @@
 import React from "react";
 import { CartItem as CartItemType } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface CartSummaryProps {
   items: CartItemType[];
+  summary?: boolean;
 }
 
-const CartSummary: React.FC<CartSummaryProps> = ({ items }) => {
+const CartSummary: React.FC<CartSummaryProps> = ({
+  items,
+  summary = true,
+}) => {
   // Calculate totals
   const subtotal = items.reduce((sum, item) => sum + item.total_amount, 0);
   const totalExpectedReturns = items.reduce(
@@ -56,16 +61,21 @@ const CartSummary: React.FC<CartSummaryProps> = ({ items }) => {
   if (items.length === 0) return null;
 
   return (
-    <div className="bg-[#F9F9F9] rounded-[6px] p-[20px] space-y-[8px]">
+    <div className={cn(
+        "rounded-[6px] space-y-[8px]",
+        summary && "p-[20px] bg-[#F9F9F9]"
+    )}>
       {/* Subtotal */}
-      <div className="flex justify-between items-center">
-        <span className="text-[16px] font-satoshi font-[700] text-[#6E6E6E]">
-          Subtotal
-        </span>
-        <span className="text-[20px] font-satoshi font-[700]">
-          {formatCurrency(subtotal)}
-        </span>
-      </div>
+      {summary && (
+        <div className="flex justify-between items-center">
+          <span className="text-[16px] font-satoshi font-[700] text-[#6E6E6E]">
+            Subtotal
+          </span>
+          <span className="text-[20px] font-satoshi font-[700]">
+            {formatCurrency(subtotal)}
+          </span>
+        </div>
+      )}
 
       {/* Total Expected Returns */}
       <div className="flex justify-between items-center bg-[#16A34A0A] py-2 px-2">
@@ -78,7 +88,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ items }) => {
       </div>
 
       {/* ROI Cycles */}
-      <ul className="space-y-[8px] list-disc ml-4">
+      <ul className="space-y-[8px] list-disc ml-4 font-satoshi">
         {sortedCycles.map((cycle) => (
           <li key={cycle.cycle} className="text-[14px]">
             <div className="flex justify-between items-center">

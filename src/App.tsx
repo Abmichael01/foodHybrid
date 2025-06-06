@@ -27,6 +27,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RewardLoyaltyProgram from "./pages/RewardLoyaltyProgram";
 import Cart from "./pages/PartnerDashboard/Cart/Cart";
+import DeliveryInformation from "./pages/PartnerDashboard/Cart/DeliveryInfo";
 
 const App = () => {
   return (
@@ -71,6 +72,7 @@ const App = () => {
           
           <Route path="cart">
             <Route index element={<Cart />} />
+            <Route path="delivery-information" element={<DeliveryInformation />} />
           </Route>
 
           <Route path="profile">
