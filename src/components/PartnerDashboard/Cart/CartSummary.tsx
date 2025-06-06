@@ -91,12 +91,12 @@ const CartSummary: React.FC<CartSummaryProps> = ({
       <ul className="space-y-[8px] list-disc ml-4 font-satoshi">
         {sortedCycles.map((cycle) => (
           <li key={cycle.cycle} className="text-[14px]">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between gap-4 items-center">
               <span className="text-[#6E6E6E]">
                 Cycle {cycle.cycle}: {formatDate(cycle.payout_date)} -{" "}
                 {formatDate(cycle.payout_date)} (+{roiPercentage}% to Portfolio)
               </span>
-              <span className="font-medium">
+              <span className="font-medium text-nowrap">
                 +{formatCurrency(cycle.amount)}
               </span>
             </div>
