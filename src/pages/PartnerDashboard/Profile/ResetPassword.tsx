@@ -19,7 +19,7 @@ const ResetPassword: React.FC = () => {
           <Link to="/partner/profile">
             <GoArrowLeft className="size-[24px]" />
           </Link>
-          <h1 className="text-[24px]">Reset Login Password</h1>
+          <h1 className="text-[20px] sm:text-[24px]">Reset Login Password</h1>
         </div>
       </div> 
       <div className=" flex justify-center">

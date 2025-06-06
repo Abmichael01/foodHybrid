@@ -26,7 +26,7 @@ import ResetPassword from "./pages/PartnerDashboard/Profile/ResetPassword";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RewardLoyaltyProgram from "./pages/RewardLoyaltyProgram";
-import Cart from "./pages/PartnerDashboard/Cart";
+import Cart from "./pages/PartnerDashboard/Cart/Cart";
 
 const App = () => {
   return (

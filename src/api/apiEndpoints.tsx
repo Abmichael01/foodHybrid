@@ -106,6 +106,9 @@ export const walletWithdrawal = async (data: {
   return res.data;
 };
 
+
+
+
 // User
 
 export const getCurrentUser = async (): Promise<UserDetails> => {
@@ -114,9 +117,9 @@ export const getCurrentUser = async (): Promise<UserDetails> => {
 };
 
 export const setTransactionPin = async (
-  data?: TransactionPinData
+  data?: Partial<TransactionPinData>
 ): Promise<unknown> => {
-  const res = await apiClient.post("/wallet/set-transaction-pin/", data || {});
+  const res = await apiClient.post("/users/setpin/partner/", data || {});
   return res.data;
 };
 
@@ -125,5 +128,13 @@ export const checkTransactionPin = async (data: {
 }): Promise<unknown> => {
   console.log(data);
   const res = await apiClient.post("/users/retrieve-pin/partner/", data);
+  return res.data;
+};
+
+
+export const changePassword = async (
+  data: { old_password: string; new_password: string }
+): Promise<unknown> => {
+  const res = await apiClient.post("/users/change-password/partner/", data);
   return res.data;
 };

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 import { IoGlobeOutline } from "react-icons/io5";
 import useAuthStore from "@/stores/authStore";
+import useUserDetailsStore from "@/stores/userStore";
 
 const navs = [
   {
@@ -45,6 +46,7 @@ const Sidebar: React.FC = () => {
   const currentPath = pathname.split("/")[2];
   const { isOpen, toggle } = useSidebarStore();
   const { logout } = useAuthStore()
+  const { userDetails } = useUserDetailsStore()
 
   return (
     <>
@@ -98,13 +100,13 @@ const Sidebar: React.FC = () => {
             <Link
               to="/partner/profile"
               className={cn(
-                "flex justify-center items-center gap-[4px] w-full text-[16px] py-[10px]",
+                "flex justify-center uppercase items-center gap-[4px] w-full text-[16px] py-[10px]",
                 currentPath === "profile" ? "bg-[#15221B1F]" : ""
               )}
               onClick={toggle}
             >
               <FaCircleUser className="size-[20px] text-[#494949]" />
-              Username
+              {userDetails?.personal_details.username}
             </Link>
             <Button onClick={() => {
               toggle();

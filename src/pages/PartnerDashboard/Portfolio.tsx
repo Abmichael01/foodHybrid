@@ -1,6 +1,7 @@
 import History from "@/components/PartnerDashboard/Portfolio/History";
 import MyOrders from "@/components/PartnerDashboard/Portfolio/MyOrders";
 import Overview from "@/components/PartnerDashboard/Portfolio/Overview";
+import useUserDetailsStore from "@/stores/userStore";
 import React from "react";
 
 const activities = [
@@ -32,10 +33,11 @@ const activities = [
 ];
 
 const Portfolio: React.FC = () => {
+  const { userDetails } = useUserDetailsStore()
   return (
     <div className="space-y-10">
       <h1 className="text-[20px] ">
-        Welcome, <span className="font-[600]">Username</span>{" "}
+        Welcome, <span className="font-[600] uppercase">{userDetails?.personal_details.username}</span>{" "}
       </h1>
       <Overview />
       <MyOrders />

@@ -29,6 +29,7 @@ export type UserDetails = {
   investment_summary: unknown[]; // You might want to create a specific type for this
   roi_over_time: unknown[]; // You might want to create a specific type for this
   personal_details: PersonalDetails;
+  has_pin: boolean;
 };
 
 export type PartnerSignupData = {
@@ -108,3 +109,14 @@ export type ViewCartData = {
   items: CartItem[];
 };
 
+
+export type WithdrawalPinFormData = {
+  transaction_pin: string;
+  otp: string;
+  pin: string;
+}
+
+export type ChangePasswordData = {
+  old_password: string;
+  new_password: string;
+}

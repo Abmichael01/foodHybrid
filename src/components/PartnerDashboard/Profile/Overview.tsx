@@ -5,8 +5,10 @@ import { IoMdWallet } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import OverviewCard from "@/components/PartnerDashboard/Portfolio/OverviewCard";
 import { Link } from "react-router-dom";
+import useUserDetailsStore from '@/stores/userStore';
 
 const Overview: React.FC = () => {
+  const { userDetails } = useUserDetailsStore()
   return (
     <div className=" flex flex-col sm:flex-row justify-center gap-y-[50px] gap-x-[50px] lg:gap-x-[120px]">
         <OverviewCard className="w-full sm:w-[313px]">
@@ -22,7 +24,7 @@ const Overview: React.FC = () => {
           <div className="text-center font-satoshi h-full">
             <h1 className="text-center text-[24px] font-satoshi font-[700] gap-[1px] flex items-center justify-center">
               {" "}
-              <span className=" text-[18px] text-[#FFFFFF99]">£</span> 153,300
+              <span className=" text-[18px] text-[#FFFFFF99]">£</span> {userDetails?.wallet_balance}
             </h1>
           </div>
           <div className="grid grid-cols-2">
@@ -49,7 +51,7 @@ const Overview: React.FC = () => {
           <div className="text-center font-satoshi">
             <h1 className="text-center text-[24px] font-satoshi font-[700] gap-[1px] flex items-center justify-center">
               {" "}
-              <span className=" text-[18px] text-[#FFFFFF99]">£</span> 53,300
+              <span className=" text-[18px] text-[#FFFFFF99]">£</span> {userDetails?.total_roi}
             </h1>
             <h1 className="text-[12px]">
               {" "}

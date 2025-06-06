@@ -4,7 +4,7 @@ import { BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const ResetSuccess: React.FC = () => {
+const Success: React.FC = () => {
   return (
     <div className="space-y-[60px] ">
       <div className="space-y-[20px] flex flex-col items-center">
@@ -23,4 +23,4 @@ const ResetSuccess: React.FC = () => {
   );
 };
 
-export default ResetSuccess;
+export default Success;

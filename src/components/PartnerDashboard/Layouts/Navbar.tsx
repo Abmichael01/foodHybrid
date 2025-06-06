@@ -11,20 +11,20 @@ import { viewCart } from "@/api/apiEndpoints";
 
 const Navbar: React.FC = () => {
   const { toggle } = useSidebarStore();
-  const { getItemCount } = useCartStore()
+  const { getItemCount } = useCartStore();
   const { updateCart } = useCartStore();
-    const { data } = useQuery({
-      queryKey: ["cartItems"],
-      queryFn: viewCart,
-    });
-  
-    console.log(data)
-  
-    React.useEffect(() => {
-      if (data) {
-        updateCart(data.items as CartItem[]);
-      }
-    }, [updateCart, data]);
+  const { data } = useQuery({
+    queryKey: ["cartItems"],
+    queryFn: viewCart,
+  });
+
+  console.log(data);
+
+  React.useEffect(() => {
+    if (data) {
+      updateCart(data.items as CartItem[]);
+    }
+  }, [updateCart, data]);
   return (
     <div className="flex items-center gap-[10px] sm:gap-[24px] h-fit">
       <div
@@ -43,13 +43,15 @@ const Navbar: React.FC = () => {
       </div>
       <Link
         to="/partner/cart"
-        className="px-[12px] z-[0] py-[12px] relative text-[14px] bg-white rounded-[8px] h-full border flex items-center gap-[4px] border-[#F0F0F0]"
+        className="px-[12px] py-[12px] text-[14px] bg-white rounded-[8px] h-full border flex items-center gap-[4px] border-[#F0F0F0]"
       >
         Cart
-        <FiShoppingCart className="w-[20.5px] h-[18.7px]" />
-        <p className="bg-red-500 size-[25px] rounded-full absolute flex justify-center items-center text-white absolute -top-2 -right-2 text-[12px] font-satoshi">
-          {getItemCount()}
-        </p>
+        <div className="relative">
+          <FiShoppingCart className="w-[20.5px] h-[18.7px]" />
+          <p className="bg-[#15221B] size-[15px] rounded-full absolute flex justify-center items-center text-white absolute -top-2 -right-2 text-[10px] font-satoshi">
+            {getItemCount()}
+          </p>
+        </div>
       </Link>
 
       <Link
