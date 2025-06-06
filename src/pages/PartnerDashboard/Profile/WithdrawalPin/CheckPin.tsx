@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
 const CheckPin: React.FC = () => {
+  const [pin, setPin] = useState("")
   const [showPin, setShowPin] = useState(false);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,8 @@ const CheckPin: React.FC = () => {
       toast.success("Password verified successfully!");
       setShowPin(true);
       setIsLoading(false);
-      console.log(data)
+      const pinValue = data["Transaction pin"];
+      setPin(pinValue);
     },
     onError: (error: Error) => {
       toast.error(error.message);
@@ -80,7 +82,7 @@ const CheckPin: React.FC = () => {
           <div className="space-y-[24px] w-full md:w-[698px] flex items-center flex-col">
             <h1 className="text-[14px] text-[#6E6E6E]">Withdrawal PIN</h1>
             <div className="flex gap-[24px]">
-              {"2222".split("").map((pin, index) => (
+              {pin.split("").map((pin, index) => (
                 <h1
                   key={index}
                   className="text-[32px] font-[500] border border-[#15221B1A]  px-[20px] py-[10px]"

@@ -125,7 +125,7 @@ export const setTransactionPin = async (
 
 export const checkTransactionPin = async (data: {
   password: string;
-}): Promise<unknown> => {
+}): Promise<{"Transaction pin": string}> => {
   console.log(data);
   const res = await apiClient.post("/users/retrieve-pin/partner/", data);
   return res.data;
