@@ -43,6 +43,9 @@ const Cart: React.FC = () => {
             </Link>
           </div>
         )}
+        {items.length !== 0 && (
+          <div className="bg-[]"></div>
+        )}
       </div>
     </div>
   );
